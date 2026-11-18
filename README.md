@@ -1,4 +1,4 @@
-# OIS｜智物起源
+# OIS 智物起源
 
 **人人都是自己的 CEO。**  
 Business Brain × Personal Agent
@@ -21,10 +21,9 @@ OIS 是一家面向真实生产力的 Agent Lab。我们关注 Agent 如何理�
 
 | 版本 | 内容重点 | 网页入口 |
 | --- | --- | --- |
-| **A｜公司简介** | 公司愿景、产品方向、市场机会、团队文化与加入机会 | [阅读公司简介 →](https://ginalau.github.io/ois-intro/) |
-| **B｜OIS Engineering** | 研发能力目标、工程议题、研究方向、技术取舍与协作方式 | [阅读研发工程师专版 →](https://ginalau.github.io/ois-intro/engineering.html) |
+| **公司简介** | 公司愿景、产品方向、市场机会、团队文化与加入机会 | [阅读公司简介 →](https://ginalau.github.io/ois-intro/) |
+| **Engineer** | 研发能力目标、工程议题、研究方向、技术取舍与协作方式 | [阅读研发工程师专版 →](https://ginalau.github.io/ois-intro/engineering.html) |
 
-两版网页均可直接打开，无需登录 GitHub。
 
 ## 交流与加入
 
@@ -33,8 +32,6 @@ OIS 是一家面向真实生产力的 Agent Lab。我们关注 Agent 如何理�
 如果你希望了解 OIS 的产品、团队或加入机会，欢迎联系**向你分享这份介绍的 OIS 同事**，继续沟通。
 
 如果你对 Agent Runtime、Context、Memory、GUI Agent、端侧智能或 Post-training 有实践或长期兴趣，也欢迎带上亲手做过的项目、一次技术取舍，或一个还没有答案的问题，与我们交流。
-
-[了解研发交流方式与加入机会 →](https://ginalau.github.io/ois-intro/engineering.html#conversation)
 
 ---
 
