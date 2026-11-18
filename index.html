@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><style>*,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
+html{line-height:1.5}body{margin:0;line-height:inherit}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}
+blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}
+ol,ul,menu{list-style:none;margin:0;padding:0}b,strong{font-weight:bolder}
+a{color:inherit;text-decoration:inherit}svg{display:block;vertical-align:middle}</style><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#704EE8" name="theme-color"/><meta content="OIS｜公司简介。Business Brain × Personal Agent。" name="description"/><title>OIS｜公司简介</title><style>
+    :root { --ink:#17171e; --muted:#72727b; --paper:#f8f7f4; --line:#e6e4e0; --purple:#704ee8; --lavender:#e9e2ff; --white:#fff; }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif; color:var(--ink); background:var(--paper); -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    .shell { width:min(1120px,calc(100% - 96px)); margin:0 auto; }
+    .hero { position:relative; isolation:isolate; overflow:hidden; min-height:648px; background:#15151b; color:#f7f6f4; }
+    .hero::before { content:""; position:absolute; width:780px; height:780px; border-radius:50%; right:-230px; top:-175px; z-index:-2; background:radial-gradient(circle,rgba(108,76,231,.34) 0,rgba(108,76,231,.12) 34%,transparent 66%); }
+    .hero::after { content:""; position:absolute; inset:0; pointer-events:none; z-index:-1; background:linear-gradient(90deg,rgba(255,255,255,.021) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.019) 1px,transparent 1px); background-size:72px 72px; mask-image:linear-gradient(90deg,transparent 18%,black 100%); }
+    .topbar { height:104px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,.12); }
+    .brand { display:inline-flex; gap:14px; align-items:center; font-weight:750; letter-spacing:-.05em; font-size:28px; }
+    .brand-mark { color:#ab91ff; font-weight:850; letter-spacing:-.08em; }
+    .brand-cn { font-size:13px; letter-spacing:.14em; font-weight:600; color:#d1cfda; }
+    .eyebrow { text-transform:uppercase; font-size:11px; color:#aaa7b5; font-weight:650; letter-spacing:.2em; }
+    .topnav { display:flex; align-items:center; gap:26px; font-size:12px; color:#bbb9c5; }
+    .nav-link { transition:color .2s; }
+    .nav-link:hover { color:#fff; }
+    .hero-inner { display:grid; grid-template-columns:1.45fr .85fr; gap:80px; align-items:end; padding-top:100px; padding-bottom:116px; }
+    .hero .label { display:flex; gap:12px; align-items:center; color:#ae93ff; font-size:12px; letter-spacing:.15em; font-weight:700; }
+    .label::before { content:""; width:25px; height:1px; background:#ae93ff; }
+    h1 { margin:25px 0 26px; font-size:clamp(50px,6vw,82px); letter-spacing:-.075em; line-height:1.23; font-weight:750; }
+    h1 em { font-style:normal; color:#ae93ff; }
+    .hero-desc { max-width:625px; margin:0; font-size:18px; line-height:1.95; color:#c7c4cf; font-weight:400; }
+    .hero-side { padding-bottom:8px; }
+    .hero-side .separator { width:100%; height:1px; background:rgba(255,255,255,.24); margin:0 0 25px; }
+    .hero-side .overline { font-size:11px; color:#b0aebb; letter-spacing:.16em; margin-bottom:17px; }
+    .hero-side .big { font-size:clamp(24px,2.9vw,38px); letter-spacing:-.05em; font-weight:650; line-height:1.4; }
+    .hero-side .small { color:#9d9aa8; font-size:13px; line-height:1.9; margin-top:20px; }
+    .hero-footer { position:absolute; bottom:35px; left:0; right:0; display:flex; justify-content:space-between; color:#898693; font-size:11px; letter-spacing:.09em; }
+    .scroll { display:flex; gap:9px; align-items:center; }
+    .scroll-line { display:inline-block; width:34px; height:1px; background:#8a8796; }
+    main { padding-top:18px; }
+    .section { padding:85px 0; border-bottom:1px solid var(--line); }
+    .section-header { display:grid; grid-template-columns:260px 1fr; gap:40px; align-items:start; }
+    .section-index { display:flex; align-items:center; gap:16px; font-size:13px; font-weight:650; color:#747179; padding-top:9px; }
+    .section-index b { color:var(--purple); font-size:12px; font-weight:750; }
+    h2 { font-size:clamp(30px,3.6vw,47px); letter-spacing:-.055em; line-height:1.27; font-weight:720; margin:0 0 24px; }
+    .lead { font-size:19px; line-height:1.85; color:#383740; max-width:760px; margin:0; }
+    .body-copy { color:#55535e; line-height:2.05; font-size:15px; margin:17px 0 0; max-width:760px; }
+    .body-copy + .body-copy { margin-top:13px; }
+    .body-copy strong { color:#26232f; font-weight:650; }
+    .manifesto { margin:36px 0 0 300px; max-width:760px; border-left:2px solid #8d6cf1; padding:2px 0 2px 24px; font-size:19px; color:#352f44; font-weight:590; line-height:1.8; letter-spacing:-.015em; }
+    .manifesto small { display:block; color:#88818e; font-size:12px; font-weight:450; margin-top:8px; letter-spacing:0; }
+    .product-extra { margin-top:21px; padding-top:19px; border-top:1px solid #eae6ee; color:#47424e; font-size:14px; line-height:1.95; }
+    .value { text-align:left; padding:23px 20px 24px; min-height:148px; }
+    .value strong { display:block; font-size:17px; margin-bottom:11px; }
+    .value p { font-size:12px; font-weight:400; color:#77727b; line-height:1.8; margin:0; }
+    .trait p { max-width:430px; }
+    .why-grid { margin:40px 0 0 300px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    .why-card { background:#fff; border:1px solid #e9e6e2; border-radius:12px; padding:24px 20px 29px; }
+    .why-card .why-num { display:block; font-size:12px; font-weight:750; letter-spacing:.08em; color:#876be3; margin-bottom:30px; }
+    .why-card h3 { font-size:18px; letter-spacing:-.03em; margin:0 0 11px; }
+    .why-card p { margin:0; color:#76717b; font-size:13px; line-height:1.9; }
+    .sub-lead { max-width:760px; margin-top:22px; font-size:15px; line-height:2; color:#645e69; }
+    .principle { font-size:13px; color:#77717b; line-height:1.8; margin:26px 0 0 300px; }
+    .highlight { color:#704ee8; }
+    .features { margin:48px 0 0 300px; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+    .feature { background:#eeece9; border-radius:12px; padding:20px 17px 22px; min-height:122px; }
+    .feature svg { width:21px; height:21px; stroke:#7453dc; fill:none; stroke-width:1.7; margin-bottom:18px; }
+    .feature strong { display:block; font-size:14px; font-weight:680; white-space:nowrap; }
+    .feature span { display:block; color:#86828c; font-size:11px; margin-top:6px; }
+    .product { background:#fff; border-radius:19px; padding:48px 48px 40px; display:grid; grid-template-columns:1.3fr .7fr; gap:70px; margin-top:40px; border:1px solid #eeeaf4; }
+    .product-label { font-size:12px; font-weight:720; letter-spacing:.1em; color:var(--purple); text-transform:uppercase; }
+    .product-name { font-size:clamp(26px,3vw,40px); letter-spacing:-.055em; font-weight:700; margin:16px 0 15px; line-height:1.38; }
+    .product-desc { color:#65616b; font-size:15px; line-height:2; margin:0; }
+    .product-outcome { display:flex; flex-direction:column; justify-content:center; padding-left:42px; border-left:1px solid #e9e5ee; }
+    .number { font-size:72px; color:var(--purple); letter-spacing:-.09em; line-height:1.08; font-weight:750; white-space:nowrap; }
+    .number small { font-size:26px; color:#9782e4; font-weight:550; padding-left:5px; }
+    .outcome-label { margin-top:15px; font-size:14px; line-height:1.8; color:#77717c; }
+    .roadmap { display:flex; align-items:flex-start; justify-content:space-between; gap:0; margin:45px 0 0 300px; }
+    .road-step { flex:1; min-width:0; position:relative; padding-right:11px; }
+    .road-step:not(:last-child)::after { content:""; position:absolute; left:18px; right:-1px; top:7px; height:1px; background:#ddd7ea; }
+    .road-dot { width:15px; height:15px; border:3px solid #ad9ae9; border-radius:50%; background:var(--paper); position:relative; z-index:1; margin-bottom:21px; }
+    .road-step:first-child .road-dot { background:var(--purple); border-color:var(--purple); }
+    .road-step .phase { font-size:11px; color:#99949f; margin-bottom:8px; }
+    .road-step strong { font-size:14px; line-height:1.55; display:block; font-weight:680; }
+    .values { margin:45px 0 0 300px; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:13px; }
+    .value { padding:22px 12px; text-align:center; border-radius:10px; background:#fff; border:1px solid #eae7e5; font-size:16px; font-weight:700; }
+    .traits { margin:42px 0 0 300px; display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+    .trait { padding:25px 0 18px; border-top:1px solid #d8d5d1; }
+    .trait .n { color:var(--purple); font-size:12px; font-weight:750; margin-bottom:18px; }
+    .trait h3 { font-size:19px; letter-spacing:-.03em; margin:0 0 10px; }
+    .trait p { color:#77727b; font-size:14px; line-height:1.85; margin:0; max-width:340px; }
+    .closing { background:#1b1922; color:#f5f3f7; padding:100px 0 55px; margin-top:0; position:relative; overflow:hidden; }
+    .closing::after { content:"OIS"; position:absolute; right:-42px; bottom:-140px; color:rgba(166,143,255,.055); font-size:450px; font-weight:900; letter-spacing:-.12em; pointer-events:none; }
+    .closing .mini { font-size:12px; letter-spacing:.16em; color:#ae93ff; font-weight:700; }
+    .closing h2 { margin:24px 0 20px; font-size:clamp(40px,5vw,68px); line-height:1.25; max-width:800px; }
+    .closing p { font-size:17px; color:#bfbac9; line-height:1.9; max-width:710px; margin-bottom:50px; }
+    .closing .tagline { font-size:22px; color:#d9cbff; font-weight:600; letter-spacing:.12em; margin-bottom:78px; }
+    .foot { position:relative; z-index:1; border-top:1px solid rgba(255,255,255,.16); padding-top:25px; display:flex; justify-content:space-between; font-size:12px; color:#9691a2; }
+    @media(max-width:850px) { .manifesto,.why-grid{margin-left:0} .shell{width:min(100% - 42px,670px)} .topbar{height:80px} .topnav{display:none} .hero{min-height:0} .hero-inner{grid-template-columns:1fr;gap:58px;padding:83px 0 116px} .hero-side{max-width:500px} .hero-footer{bottom:26px} .section{padding:63px 0} .section-header{grid-template-columns:1fr;gap:24px} .section-index{padding:0} .features,.roadmap,.values,.traits{margin-left:0} .principle{margin-left:0} .product{gap:25px;padding:32px;grid-template-columns:1fr} .product-outcome{border-left:0;border-top:1px solid #e9e5ee;padding:27px 0 0} .closing{padding-top:75px} }
+    @media(max-width:560px) { .brand{font-size:25px}.brand-cn{font-size:11px} .eyebrow{font-size:10px} h1{font-size:51px} .hero-desc{font-size:16px} .hero-inner{padding:72px 0 110px} .hero-side .big{font-size:28px} .section{padding:57px 0} h2{font-size:34px} .lead{font-size:17px}.body-copy{font-size:14px} .features{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:30px} .feature{min-height:111px} .values{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:29px}.traits{grid-template-columns:1fr;gap:0;margin-top:25px}.roadmap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 10px}.road-step:nth-child(even)::after{display:none}.product{margin-top:30px;padding:27px 24px}.number{font-size:59px}.closing h2{font-size:42px}.closing p{font-size:15px}.closing .tagline{font-size:20px}.foot{gap:12px;line-height:1.6}.hero-footer{font-size:10px}}
+    @media(min-width:561px) and (max-width:850px) { .why-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;} .why-card{padding:20px 15px}.why-card h3{font-size:16px} }
+    @media(max-width:560px) { .why-grid{grid-template-columns:1fr;gap:12px;margin-top:28px}.why-card{padding:21px 22px}.why-card .why-num{margin-bottom:14px}.manifesto{font-size:17px;margin-top:28px} .value{min-height:148px;padding:20px 15px}.value strong{font-size:16px}.value p{font-size:12px}.principle{margin-top:18px}.hero-footer span:first-child{max-width:66%;line-height:1.5} }
+
+    .market-view { margin:30px 0 0 300px; background:#f0edf9; border:1px solid #e6dff7; border-radius:16px; padding:28px 32px 24px; }
+    .market-kicker { color:#7250d5; font-size:11px; letter-spacing:.15em; font-weight:750; }
+    .market-intro { font-size:15px; color:#3f3b49; line-height:1.95; margin:13px 0 22px; max-width:760px; }
+    .market-metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; border-top:1px solid #ded6ee; border-bottom:1px solid #ded6ee; padding:21px 0; }
+    .market-metric { padding:0 19px; border-left:1px solid #ded6ee; }
+    .market-metric:first-child { padding-left:0; border-left:0; }
+    .market-metric:last-child { padding-right:0; }
+    .market-metric b { display:block; color:#422d91; font-size:clamp(25px,3vw,38px); line-height:1.18; letter-spacing:-.055em; font-weight:750; white-space:nowrap; }
+    .market-metric span { display:block; margin-top:9px; font-size:12px; color:#726b81; line-height:1.6; }
+    .market-point { font-size:15px; font-weight:640; color:#362e48; line-height:1.9; margin:18px 0 0; }
+    .market-footnote { font-size:11px; color:#81798d; line-height:1.8; margin:13px 0 0; }
+    .market-footnote a { color:#6749cc; text-decoration:underline; text-underline-offset:2px; }
+    @media(max-width:850px) { .market-view { margin-left:0; } }
+    @media(max-width:560px) { .market-view { padding:23px 21px 21px; margin-top:26px; } .market-intro { font-size:14px; } .market-metric { padding:0 10px; } .market-metric b { font-size:clamp(21px,6vw,30px); } .market-metric span { font-size:10px; } .market-point { font-size:14px; } }
+    @media(prefers-reduced-motion:reduce) { html{scroll-behavior:auto} }
+    @media print { body{background:#fff} .hero{-webkit-print-color-adjust:exact;print-color-adjust:exact;min-height:0} .hero-inner{padding-top:45px;padding-bottom:65px} .hero-footer{display:none} .section{padding:35px 0;break-inside:avoid} .closing{-webkit-print-color-adjust:exact;print-color-adjust:exact;break-inside:avoid} }
+
+
+    /* Responsive edition — desktop reading and truly single-column mobile reading */
+    html { -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+    body { min-width:0; overflow-x:clip; }
+    p, h1, h2, h3, .trait, .market-view, .product, .section-header, .section-header > * { min-width:0; overflow-wrap:break-word; }
+    a:focus-visible { outline:2px solid #a78bfa; outline-offset:4px; border-radius:3px; }
+    section[id] { scroll-margin-top:24px; }
+    .mobile-edition { display:none; }
+    .body-copy { font-size:16px; line-height:1.95; }
+    .lead { line-height:1.8; }
+    .market-metric b { font-variant-numeric:tabular-nums; }
+    .feature strong { white-space:normal; }
+
+    @media (min-width:1200px) {
+      .shell { width:min(1120px,calc(100% - 112px)); }
+      .section { padding:92px 0; }
+      .hero-inner { padding-top:105px; padding-bottom:125px; }
+    }
+
+    @media (min-width:851px) and (max-width:1050px) {
+      .shell { width:calc(100% - 72px); }
+      .section-header { grid-template-columns:210px minmax(0,1fr); gap:34px; }
+      .market-view, .features, .roadmap, .values, .traits, .principle, .why-grid { margin-left:244px; }
+      .hero-inner { grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); gap:42px; }
+      .product { gap:35px; }
+      .market-view { padding:25px; }
+      .market-metric { padding:0 12px; }
+      .market-metric b { font-size:clamp(25px,2.9vw,32px); }
+    }
+
+    @media (max-width:850px) {
+      .shell { width:min(100% - 48px,700px); }
+      .section-header { grid-template-columns:minmax(0,1fr); gap:20px; }
+      .section { padding:69px 0; }
+      .section-index { letter-spacing:.03em; }
+      .section-index::after { content:''; height:1px; width:44px; background:#e3dee7; }
+      .section-index { margin-bottom:3px; }
+      .market-view, .features, .roadmap, .values, .traits, .principle, .why-grid, .manifesto { margin-left:0; }
+      .body-copy { font-size:16px; line-height:1.95; }
+      .market-view { margin-top:32px; }
+      .product { grid-template-columns:minmax(0,1fr); }
+      .hero-inner { grid-template-columns:minmax(0,1fr); }
+      .hero-side { max-width:600px; }
+      .closing h2 { max-width:660px; }
+    }
+
+    @media (max-width:560px) {
+      .shell { width:calc(100% - 40px); max-width:470px; }
+      .hero { min-height:auto; }
+      .hero::before { width:440px; height:440px; right:-220px; top:80px; }
+      .hero::after { background-size:48px 48px; }
+      .topbar { height:70px; }
+      .brand { gap:10px; font-size:25px; }
+      .brand-cn { font-size:11px; }
+      .mobile-edition { display:block; color:#b6abce; font-weight:680; letter-spacing:.14em; font-size:10px; }
+      .hero-inner { gap:45px; padding:62px 0 103px; align-items:start; }
+      .hero .label { font-size:10px; letter-spacing:.13em; }
+      h1 { margin:24px 0 21px; font-size:clamp(39px,11.8vw,55px); line-height:1.22; letter-spacing:-.07em; }
+      .hero-desc { font-size:16px; line-height:1.9; max-width:32em; }
+      .hero-side { padding:0; }
+      .hero-side .separator { margin-bottom:19px; }
+      .hero-side .overline { margin-bottom:12px; font-size:10px; }
+      .hero-side .big { font-size:clamp(25px,7.4vw,32px); line-height:1.36; }
+      .hero-side .small { font-size:12px; margin-top:14px; line-height:1.85; }
+      .hero-footer { bottom:24px; gap:8px; font-size:9px; }
+      .scroll-line { width:20px; }
+      main { padding-top:0; }
+      .section { padding:55px 0 58px; }
+      .section-header { gap:17px; }
+      .section-index { font-size:12px; gap:12px; }
+      h2 { font-size:clamp(30px,8.7vw,37px); line-height:1.27; margin-bottom:22px; letter-spacing:-.055em; }
+      .lead { font-size:17px; line-height:1.84; }
+      .body-copy { font-size:16px; line-height:1.95; margin-top:18px; }
+      .body-copy + .body-copy { margin-top:13px; }
+      .manifesto { font-size:17px; padding-left:19px; margin-top:28px; line-height:1.77; }
+      .features { gap:10px; margin-top:30px; grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .feature { min-height:128px; padding:20px 14px; }
+      .feature svg { margin-bottom:16px; }
+      .feature strong { font-size:14px; line-height:1.45; }
+      .feature span { font-size:12px; line-height:1.6; }
+      .market-view { padding:23px 18px 21px; margin-top:28px; border-radius:14px; }
+      .market-kicker { font-size:10px; letter-spacing:.11em; }
+      .market-intro { margin:13px 0 20px; font-size:15px; line-height:1.88; }
+      .market-metrics { padding:0; border:0; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+      .market-metric, .market-metric:first-child, .market-metric:last-child { min-width:0; padding:16px 12px 14px; border:1px solid #e4dcee; border-radius:10px; background:rgba(255,255,255,.58); }
+      .market-metric b { font-size:clamp(22px,6.9vw,32px); line-height:1.25; white-space:nowrap; letter-spacing:-.05em; }
+      .market-metric span { margin-top:7px; font-size:12px; line-height:1.55; }
+      .market-metric:last-child { grid-column:1/-1; background:#e7dffc; border-color:#d9cdf5; padding:17px 16px; }
+      .market-metric:last-child b { font-size:clamp(34px,9.3vw,42px); }
+      .market-metric:last-child span { font-size:13px; }
+      .market-point { font-size:15px; line-height:1.85; margin-top:18px; }
+      .market-footnote { font-size:12px; line-height:1.8; margin-top:12px; }
+      .product { padding:26px 22px; gap:21px; margin-top:28px; border-radius:14px; }
+      .product-label { font-size:11px; }
+      .product-name { font-size:clamp(27px,8vw,34px); margin:13px 0; }
+      .product-desc { font-size:15px; line-height:1.95; }
+      .product-extra { font-size:15px; line-height:1.93; }
+      .product-outcome { padding-top:21px; }
+      .number { font-size:62px; }
+      .outcome-label { font-size:13px; margin-top:8px; }
+      .roadmap { display:grid; grid-template-columns:minmax(0,1fr); gap:0; margin-top:35px; }
+      .road-step { padding:0 0 24px 38px; min-height:74px; }
+      .road-step:last-child { padding-bottom:0; }
+      .road-step .road-dot { position:absolute; top:3px; left:0; margin:0; }
+      .road-step:not(:last-child)::after, .road-step:nth-child(even)::after { display:block; top:18px; left:7px; right:auto; width:1px; height:calc(100% - 13px); background:#d8d1ea; }
+      .road-step .phase { font-size:12px; margin-bottom:3px; }
+      .road-step strong { font-size:16px; line-height:1.5; }
+      .road-step strong br { display:none; }
+      .values { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:28px; }
+      .value { min-height:158px; padding:20px 14px; text-align:left; }
+      .value strong { font-size:16px; margin-bottom:11px; }
+      .value p { font-size:13px; line-height:1.78; }
+      .principle { font-size:13px; margin-top:18px; }
+      .traits { grid-template-columns:1fr; gap:0; margin-top:30px; }
+      .trait { padding:22px 0 24px; }
+      .trait .n { font-size:11px; margin-bottom:12px; }
+      .trait h3 { font-size:19px; }
+      .trait p { max-width:none; font-size:15px; line-height:1.85; }
+      .why-grid { grid-template-columns:1fr; margin-top:28px; gap:11px; }
+      .why-card { padding:22px 22px 23px; }
+      .why-card .why-num { margin-bottom:14px; }
+      .why-card h3 { font-size:18px; }
+      .why-card p { font-size:15px; line-height:1.86; }
+      .closing { padding:75px 0 37px; }
+      .closing::after { font-size:300px; right:-48px; bottom:-80px; }
+      .closing h2 { font-size:clamp(33px,9.3vw,43px); margin:22px 0 20px; }
+      .closing p { font-size:16px; line-height:1.91; margin-bottom:36px; }
+      .closing .tagline { font-size:20px; margin-bottom:65px; }
+      .foot { flex-wrap:wrap; font-size:11px; }
+    }
+
+    @media (max-width:360px) {
+      .shell { width:calc(100% - 32px); }
+      .hero-inner { padding-top:55px; }
+      .hero-footer { letter-spacing:0; }
+      .market-view { padding:20px 14px; }
+      .market-metrics { gap:8px; }
+      .market-metric, .market-metric:first-child { padding:13px 8px; }
+      .market-metric b { font-size:clamp(21px,6.6vw,25px); }
+      .market-metric span { font-size:11px; }
+      .value { padding:18px 12px; }
+      .product { padding:23px 19px; }
+      .hero-side .big { font-size:25px; }
+    }
+
+    @media (hover:none) and (pointer:coarse) {
+      .nav-link { min-height:44px; display:inline-flex; align-items:center; }
+      a { -webkit-tap-highlight-color:rgba(121,85,244,.12); }
+    }
+
+  
+/* 2.0 — 在 1.0 排版基础上的内容适配 */
+html { text-size-adjust:100%; -webkit-text-size-adjust:100%; }
+/* 明确正文标题层级，避免延后加载的 Tailwind 基础样式覆盖 1.0 的标题。 */
+body h1 { margin:25px 0 26px; font-size:clamp(50px,6vw,82px); letter-spacing:-.075em; line-height:1.23; font-weight:750; }
+body h3 { font-weight:650; }
+body h2 { text-wrap:balance; font-size:clamp(30px,3.6vw,47px); letter-spacing:-.055em; line-height:1.27; font-weight:720; margin:0 0 24px; }
+@media(max-width:560px) {
+ body h1 { margin:24px 0 21px; font-size:clamp(39px,11.8vw,55px); line-height:1.22; letter-spacing:-.07em; }
+ body h2 { font-size:clamp(30px,8.7vw,37px); line-height:1.27; margin-bottom:22px; letter-spacing:-.055em; }
+}
+body { overflow-wrap:break-word; }
+.hero > .shell { position:relative; }
+.skip-link { position:absolute; top:-80px; left:20px; padding:12px 16px; background:#fff; color:var(--ink); z-index:10; }
+.skip-link:focus { top:12px; }
+.hero-desc + .hero-desc { margin-top:13px; }
+.version-link { display:inline-flex; align-items:center; gap:9px; padding:9px 12px; border:1px solid rgba(255,255,255,.26); border-radius:5px; color:#e4dcf7; font-size:12px; white-space:nowrap; line-height:1.5; }
+.version-link:hover { border-color:#b69bff; color:#fff; }
+.mobile-version { display:none; }
+.hero-footer { width:100%; }
+.hero-footer a { display:inline-flex; align-items:center; gap:9px; }
+.content-offset { margin-left:300px; }
+.section-header > div:last-child { min-width:0; }
+.body-copy strong { color:#292432; }
+.section-copy + .section-copy { margin-top:16px; }
+.question-label { margin:25px 0 12px; font-size:16px; font-weight:650; color:#3c3547; }
+.product { align-items:start; }
+.product-name { margin-top:22px; font-size:clamp(25px,2.7vw,35px); }
+.product-desc + .product-desc { margin-top:17px; }
+.product-outcome { align-self:stretch; }
+.goal-statement { margin:0; color:#61596e; font-size:14px; line-height:1.9; }
+.goal-statement strong { display:block; margin-bottom:12px; font-size:clamp(44px,5vw,65px); font-weight:750; color:var(--purple); line-height:1.3; letter-spacing:-.065em; white-space:nowrap; }
+.goal-detail { display:block; }
+.goal-join { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.goal-note { font-size:12px; color:#746c7f; line-height:1.85; margin-top:17px; }
+.product-after { margin-top:25px; }
+.culture-declaration { margin-top:32px; font-size:21px; line-height:1.85; font-weight:620; color:#352f44; }
+.values { text-align:left; }
+.value { text-align:left; }
+.value p { font-size:13px; }
+.trait p { max-width:none; }
+.trait h3 { line-height:1.5; }
+.why-card h3 { line-height:1.55; }
+.why-card p { font-size:14px; }
+.after-cards { margin-top:29px; }
+.after-cards .body-copy { max-width:760px; }
+.closing::after { z-index:0; }
+.closing .shell { position:relative; z-index:1; }
+.closing .tagline { letter-spacing:.06em; }
+.closing .closing-link { display:inline-flex; align-items:center; gap:20px; font-size:13px; color:#e5daff; padding:12px 0; border-bottom:1px solid #827096; margin-bottom:44px; line-height:1.7; }
+.closing .tagline { margin-bottom:38px; }
+.closing h2 { font-weight:700; }
+.engineering .closing h2 { max-width:100%; font-size:clamp(29px,3.2vw,44px); line-height:1.5; }
+.engineering h1 { letter-spacing:-.06em; }
+.engineering .topic-list { margin-top:34px; }
+.engineering .topic { padding:26px 0 28px; border-top:1px solid #d8d5d1; }
+.engineering .topic:first-child { padding-top:25px; }
+.engineering .topic-index { font-size:11px; font-weight:700; color:var(--purple); margin-bottom:15px; letter-spacing:.1em; }
+.engineering .topic h3 { font-size:21px; line-height:1.55; letter-spacing:-.025em; margin:0 0 14px; }
+.engineering .topic p { font-size:16px; line-height:1.95; color:#55535e; }
+.engineering .topic p + p { margin-top:14px; }
+.engineering .research-grid { margin-top:34px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.engineering .research { border:1px solid #e7e2ed; border-radius:12px; background:#fff; padding:25px; }
+.engineering .research h3 { font-size:18px; margin:0 0 13px; line-height:1.5; }
+.engineering .research p { font-size:14px; color:#6c6475; line-height:1.95; }
+.engineering .choices { margin-top:28px; border-left:2px solid var(--purple); padding-left:22px; }
+.engineering .choices p { margin-top:0; }
+@media (min-width:851px) and (max-width:1050px) {
+ .content-offset { margin-left:244px; }
+ .topnav { gap:17px; }
+ .topnav .version-link { font-size:11px; padding:8px 10px; }
+ .product-outcome { padding-left:26px; }
+}
+@media(max-width:850px) {
+ .content-offset { margin-left:0; }
+ .mobile-version { display:inline-flex; }
+ .version-link { font-size:11px; }
+ .product-outcome { padding-left:0; }
+ .culture-declaration { font-size:21px; }
+ .goal-statement strong { font-size:59px; }
+}
+@media(max-width:560px) {
+ .brand-cn { letter-spacing:.08em; }
+ .company #about h2 .about-prefix { display:block; }
+ .engineering .closing h2 { font-size:clamp(26px,7.4vw,31px); line-height:1.5; }
+ .version-link { font-size:10px; padding:8px 9px; gap:6px; }
+ .hero-desc + .hero-desc { margin-top:12px; }
+ .hero-side .small { margin-top:14px; }
+ .product-name { font-size:27px; }
+ .culture-declaration { font-size:19px; line-height:1.9; margin-top:26px; }
+ .value p { font-size:13px; }
+ .after-cards { margin-top:25px; }
+ .engineering .topic { padding:23px 0 25px; }
+ .engineering .topic h3 { font-size:19px; }
+ .engineering .topic p { font-size:16px; }
+ .engineering .research-grid { grid-template-columns:1fr; gap:12px; margin-top:28px; }
+ .engineering .research { padding:23px 22px; }
+ .engineering .research p { font-size:15px; }
+ .engineering .choices { padding-left:18px; }
+ .engineering .why-card h3 { font-size:18px; }
+ .engineering .why-card p { font-size:15px; }
+ .closing .closing-link { font-size:13px; margin-bottom:34px; }
+ .closing .tagline { margin-bottom:31px; }
+}
+@media(max-width:360px) {
+ .brand { gap:7px; }
+ .brand-cn { font-size:10px; }
+ .version-link { font-size:9px; padding:8px; }
+}
+@media print {
+ .version-link,.closing-link,.skip-link { display:none; }
+ .hero-footer { display:none; }
+ .content-offset { margin-left:0; }
+ .section-header { grid-template-columns:1fr; gap:15px; }
+ .hero::before,.hero::after,.closing::after { display:none; }
+ .hero-inner { padding-bottom:45px; }
+ .section { break-inside:auto; }
+ .value,.trait,.why-card,.research,.topic { break-inside:avoid; }
+}
+
+/* 手机阅读优化：保留文案、色彩和 1.0 的桌面版构图。 */
+.keep-together { white-space:nowrap; }
+.copy-punctuation { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.direction-overview { margin-top:22px; }
+.direction-overview > p { margin:0 0 15px; font-size:16px; line-height:1.85; color:#55535e; }
+.direction-items { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; }
+.direction-item { display:flex; align-items:center; min-height:67px; padding:14px; border-radius:8px; background:#eeece9; font-size:14px; font-weight:650; line-height:1.65; color:#453c53; }
+.path-overview { margin-top:22px; }
+.path-overview > p { margin:0 0 20px; color:#55535e; font-size:16px; line-height:1.85; }
+.path-steps { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:17px; }
+.path-step { border-top:2px solid #d8cdef; padding-top:17px; font-size:14px; line-height:1.9; color:#645a70; }
+.path-step strong { font-weight:650; color:#352e43; }
+.engineering .topic p { max-width:740px; }
+@media(max-width:850px) {
+ .direction-items { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:560px) {
+ .hero-inner { gap:21px; padding:38px 0 69px; }
+ body h1 { margin-top:19px; margin-bottom:19px; }
+ .hero-desc { line-height:1.8; }
+ .hero-desc + .hero-desc { margin-top:11px; }
+ .hero-side { padding-top:14px; border-top:1px solid rgba(255,255,255,.2); }
+ .hero-side .separator,.hero-side .overline { display:none; }
+ .hero-side .big { font-size:20px; line-height:1.4; letter-spacing:-.025em; }
+ .hero-side .small { margin-top:7px; font-size:12px; line-height:1.75; }
+ .hero-footer { bottom:19px; }
+ .section { padding:43px 0 46px; }
+ .section-header { gap:15px; }
+ .lead { line-height:1.8; }
+ .body-copy { line-height:1.82; margin-top:16px; }
+ .body-copy + .body-copy { margin-top:13px; }
+ body h2 { margin-bottom:19px; }
+ .company #about h2 .about-prefix { display:inline; }
+ .company #about h2 .about-intro { display:block; font-size:clamp(20px,5.6vw,24px); line-height:1.55; font-weight:600; letter-spacing:-.025em; }
+ .company #about h2 .about-break { display:none; }
+ .company #about h2 .highlight { display:block; margin-top:5px; }
+ .direction-overview { margin-top:19px; }
+ .direction-overview > p { font-size:16px; line-height:1.82; margin-bottom:12px; }
+ .direction-items { gap:8px; }
+ .direction-item { min-height:56px; padding:12px; font-size:14px; line-height:1.6; }
+ .path-overview { margin-top:19px; }
+ .path-overview > p { margin-bottom:17px; font-size:16px; }
+ .path-steps { display:block; padding-left:7px; }
+ .path-step { position:relative; border-top:0; border-left:1px solid #d8cdef; padding:0 0 18px 19px; font-size:15px; line-height:1.8; }
+ .path-step:before { content:''; position:absolute; width:7px; height:7px; border-radius:50%; background:var(--purple); left:-4px; top:9px; }
+ .path-step:last-child { border-left-color:transparent; padding-bottom:0; }
+ .product { padding:23px 21px; gap:19px; margin-top:24px; }
+ .product-desc,.product-extra { line-height:1.82; }
+ .product-name { margin-top:19px; font-size:26px; }
+ .product-outcome { padding-top:19px; }
+ .goal-note { font-size:13px; line-height:1.75; margin-top:13px; }
+ .product-after { margin-top:19px; }
+ .culture-declaration { margin-top:23px; line-height:1.8; }
+ .values { display:block; margin-top:23px; }
+ .value { display:grid; grid-template-columns:70px minmax(0,1fr); gap:15px; min-height:0; padding:16px 0; border:0; border-top:1px solid #ded9e3; border-radius:0; background:transparent; }
+ .value strong { font-size:15px; line-height:1.8; margin:0; }
+ .value p { font-size:14px; line-height:1.8; color:#655f6c; }
+ .principle { line-height:1.8; margin-top:17px; }
+ .traits { margin-top:24px; }
+ .trait { padding:18px 0 20px; }
+ .trait .n { margin-bottom:9px; }
+ .trait h3 { font-size:18px; margin-bottom:9px; }
+ .trait p { line-height:1.8; }
+ .why-grid { margin-top:24px; gap:0; }
+ .why-card { display:grid; grid-template-columns:25px minmax(0,1fr); column-gap:13px; padding:18px 0 20px; border:0; border-top:1px solid #ded9e3; border-radius:0; background:transparent; }
+ .why-card .why-num { grid-row:1 / span 2; margin:0; line-height:1.8; font-size:11px; }
+ .why-card h3 { margin:0 0 9px; font-size:18px; line-height:1.55; }
+ .why-card p { font-size:15px; line-height:1.8; }
+ .after-cards { margin-top:19px; }
+ .engineering .topic-list { margin-top:23px; }
+ .engineering .topic,.engineering .topic:first-child { padding:20px 0 22px; }
+ .engineering .topic-index { margin-bottom:10px; }
+ .engineering .topic h3 { margin-bottom:10px; font-size:18px; }
+ .engineering .topic p { font-size:16px; line-height:1.82; }
+ .engineering .topic p + p { margin-top:12px; }
+ .engineering .research-grid { display:block; margin-top:22px; }
+ .engineering .research { display:grid; grid-template-columns:110px minmax(0,1fr); gap:16px; padding:18px 0; background:transparent; border:0; border-top:1px solid #ded9e3; border-radius:0; }
+ .engineering .research h3 { font-size:16px; line-height:1.6; margin:0; white-space:nowrap; }
+ .engineering .research p { font-size:15px; line-height:1.8; color:#655f6c; }
+ .engineering .choices { margin-top:20px; padding-left:16px; }
+ .closing { padding-top:51px; padding-bottom:30px; }
+ .engineering .closing h2 { font-size:clamp(24px,6.8vw,28px); line-height:1.55; text-wrap:balance; letter-spacing:-.035em; }
+ .closing .tagline { margin-bottom:24px; }
+ .closing .closing-link { margin-bottom:25px; }
+ .foot { padding-top:20px; }
+}
+@media print {
+ .copy-punctuation { position:static; width:auto; height:auto; clip-path:none; }
+ .path-steps { break-inside:avoid; }
+}
+
+/* 正文重点沿用 1.0 的深色粗体，保持其余字体及 A 版布局。 */
+body p strong { font-weight:650; color:#292432; }
+.hero p strong { color:#eee9fb; }
+.culture-declaration strong { font-weight:700; }
+/* B 版：能力概览、工程议题、方向卡片、协作原则各自有清楚层级。 */
+.engineering .work-context { margin-top:26px; display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.engineering .work-context .body-copy { margin:0; font-size:15px; line-height:1.95; }
+.engineering .work-context .body-copy:last-child { border-left:2px solid #d8cdef; padding-left:22px; }
+.engineering .capability-sentence { margin:0; }
+.engineering .capability-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; }
+.engineering .capability { background:#eeece9; border-radius:7px; padding:14px 16px; font-size:16px; font-weight:650; line-height:1.65; }
+.engineering .capability-suffix { display:block; margin-top:15px; font-size:16px; color:#55535e; line-height:1.9; }
+.engineering .engineering-topics { display:grid; gap:16px; margin-top:30px; }
+.engineering .engineering-topic { border:1px solid #e7e2ed; background:#fff; border-radius:12px; padding:27px 30px; }
+.engineering .topic-heading { display:flex; align-items:baseline; gap:15px; margin-bottom:14px; }
+.engineering .topic-number { color:var(--purple); font-size:11px; font-weight:750; line-height:1.6; letter-spacing:.08em; flex-shrink:0; }
+.engineering .engineering-topic h3 { margin:0; font-size:21px; letter-spacing:-.025em; line-height:1.55; }
+.engineering .topic-copy { margin:0; color:#55535e; font-size:16px; line-height:1.95; }
+.engineering .topic-copy + .topic-copy { margin-top:16px; border-top:1px solid #eeeaf2; padding-top:14px; color:#6c6475; font-size:14px; }
+.engineering .research { display:flex; align-items:flex-start; gap:15px; padding:25px; }
+.engineering .research-icon { width:21px; height:21px; flex:0 0 21px; margin-top:3px; stroke:var(--purple); fill:none; stroke-width:1.7; }
+.engineering .research-copy { min-width:0; }
+.engineering .research h3 { white-space:normal; }
+.engineering .working-principles { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:23px; margin-top:34px; }
+.engineering .working-principle { border-top:1px solid #d8d5d1; padding-top:22px; }
+.engineering .working-principle .topic-number { display:block; margin-bottom:16px; }
+.engineering .working-principle h3 { font-size:19px; letter-spacing:-.025em; line-height:1.6; margin:0 0 13px; text-wrap:balance; }
+.engineering .working-principle p { font-size:15px; line-height:1.95; color:#655f6c; margin:0; }
+@media(max-width:850px) {
+ .engineering .work-context { gap:23px; }
+ .engineering .working-principles { gap:22px; }
+}
+@media(max-width:560px) {
+ .engineering .work-context { display:block; margin-top:18px; }
+ .engineering .work-context .body-copy { font-size:16px; line-height:1.82; }
+ .engineering .work-context .body-copy:last-child { margin-top:17px; padding-left:16px; }
+ .engineering .capability-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+ .engineering .capability { padding:12px 14px; font-size:15px; }
+ .engineering .capability-suffix { font-size:16px; margin-top:13px; line-height:1.82; }
+ .engineering .engineering-topics { margin-top:23px; gap:13px; }
+ .engineering .engineering-topic { padding:20px; border-radius:10px; }
+ .engineering .topic-heading { gap:11px; margin-bottom:12px; }
+ .engineering .engineering-topic h3 { font-size:18px; line-height:1.55; }
+ .engineering .topic-copy { font-size:16px; line-height:1.82; }
+ .engineering .topic-copy + .topic-copy { margin-top:13px; padding-top:12px; font-size:14px; line-height:1.85; }
+ .engineering .research { display:flex; gap:13px; padding:18px 0; }
+ .engineering .research-icon { width:18px; height:18px; flex-basis:18px; margin-top:4px; }
+ .engineering .research h3 { margin:0 0 7px; font-size:17px; }
+ .engineering .research p { font-size:15px; }
+ .engineering .working-principles { display:block; margin-top:24px; }
+ .engineering .working-principle { padding:19px 0 21px; }
+ .engineering .working-principle .topic-number { margin-bottom:9px; }
+ .engineering .working-principle h3 { margin-bottom:10px; font-size:18px; text-wrap:initial; }
+ .engineering .working-principle p { font-size:16px; line-height:1.82; }
+}
+@media print {
+ .engineering-topic,.working-principle { break-inside:avoid; }
+ .engineering .copy-punctuation { position:absolute; width:1px; height:1px; clip-path:inset(50%); }
+}
+.engineering .working-principle h3 { min-height:61px; } @media(max-width:560px) { .engineering .working-principle h3 { min-height:0; } .engineering .principle-break { display:none; } }@media(min-width:561px) and (max-width:700px) { .engineering .working-principles { grid-template-columns:1fr; gap:24px; } .engineering .working-principle h3 { min-height:0; } .engineering .principle-break { display:none; } }.manifesto { font-weight:650; border-left-color:var(--purple); } .manifesto small { font-weight:450; }
+/* 最后两处局部调整：仅作用于 A 版的研发方向和产品卡片。 */
+.company .direction-item { gap:9px; }
+.company .direction-icon { width:18px; height:18px; flex:0 0 18px; display:block; stroke:#704EE8; fill:none; stroke-width:1.7; }
+.company .direction-copy { min-width:0; }
+.company .product > div:first-child > .product-name:first-child { margin-top:0; margin-bottom:18px; }
+@media(max-width:560px) {
+ .company .direction-item { gap:8px; }
+ .company .direction-icon { width:16px; height:16px; flex-basis:16px; }
+}
+
+.company .market-footnote { font-size:13px; color:#625b70; }
+</style></head>
+<body class="company"><a class="skip-link" href="#main">跳到正文</a><header class="hero" id="top"><div class="shell">
+<nav aria-label="主导航" class="topbar"><a aria-label="OIS 智物起源" class="brand" href="#top"><span class="brand-mark">OIS</span><span class="brand-cn">智物起源</span></a><div class="topnav"><a class="nav-link" href="#about">我们是谁</a><a class="nav-link" href="#product">正在做什么</a><a class="nav-link" href="#culture">我们的文化</a><a class="nav-link" href="#opportunity">加入我们</a></div></nav>
+<div class="hero-inner"><div><div class="label">A NEW WAY TO WORK</div><h1>人人都是<br/>自己的 <em>CEO.</em></h1><p class="hero-desc">未来，每个人都可以拥有一支 AI Agent 团队。</p><p class="hero-desc">让 Agent 承担重复而有价值的工作，让人专注于判断、沟通、建立信任与创造。我们要用 AI + 终端，重新定义人与工作的关系。</p></div><aside aria-label="核心定位" class="hero-side"><div class="separator"></div><div class="overline">OUR POSITIONING</div><div class="big">Business Brain<br/>× Personal Agent</div><p class="small">一家面向真实生产力的 Agent Lab。</p></aside></div>
+<div class="hero-footer"><span>OIS · AGENT LAB · AI + TERMINAL</span><a class="scroll" href="#about">了解我们<span aria-hidden="true" class="scroll-line"></span></a></div>
+</div></header><main id="main"><section class="section shell" id="about"><div class="section-header"><div class="section-index"><b>01</b>我们是谁</div><div><h2><span class="about-intro"><span class="about-prefix">一家将智能</span>转化为生产力的</span><br class="about-break"/><span class="highlight">Agent Lab</span></h2><p class="lead">大模型提供智能，Agent 将智能转化为行动，终端让 Agent 进入真实工作。</p><p class="body-copy">我们要创造真正能够协助人完成工作的 Agent，让它从理解目标走向行动，成为人的工作伙伴。</p><p class="body-copy capability-overview"><strong>理解目标、构建上下文、检索记忆、调用工具、持续执行并评估结果</strong>，是我们希望 Agent 具备的能力。</p><div class="direction-overview"><p>围绕这个目标，我们的研究方向包括</p><div class="direction-items"><span class="direction-item"><svg aria-hidden="true" class="direction-icon" focusable="false" viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M12 4v16M4 12h16"></path></svg><span class="direction-copy">领域 Agent<span class="copy-punctuation">、</span></span></span><span class="direction-item"><svg aria-hidden="true" class="direction-icon" focusable="false" viewbox="0 0 24 24"><rect height="16" rx="3" width="16" x="4" y="4"></rect><path d="M9 4v16M4 9h16"></path></svg><span class="direction-copy">支撑 Agent 的 <span class="keep-together">OS 能力</span><span class="copy-punctuation">、</span></span></span><span class="direction-item"><svg aria-hidden="true" class="direction-icon" focusable="false" viewbox="0 0 24 24"><rect height="20" rx="2" width="10" x="7" y="2"></rect><path d="M10 18h4"></path></svg><span class="direction-copy">端侧模型<span class="copy-punctuation">与</span></span></span><span class="direction-item"><svg aria-hidden="true" class="direction-icon" focusable="false" viewbox="0 0 24 24"><path d="M4 17l5-5 4 3 7-9"></path><path d="M15 6h5v5"></path></svg><span class="direction-copy">Post-training<span class="copy-punctuation">。</span></span></span></div></div><p class="body-copy">现阶段，我们不从零训练基础大模型，也不自主制造硬件。我们<strong>把资源集中在最重要的事情上：让 Agent 真正具备生产力。</strong></p></div></div><div class="manifesto">我们要做的不是“更会聊天的 AI”，<br/>而是“真正能把事情做成的 AI”。<small>BUSINESS BRAIN × PERSONAL AGENT</small></div></section><section class="section shell" id="product"><div class="section-header"><div class="section-index"><b>02</b>正在做什么</div><div><h2>从销售开始，<br/>创造下一代工作方式</h2><p class="lead">我们的初代产品是 <strong>AI CRM + Personal Agent（Sales Work）</strong>，核心形态是一部 <strong class="keep-together">AI 工作手机</strong>。</p><p class="question-label">为什么从销售开始？</p><p class="body-copy">寻找客户、记录信息、持续跟进、整理方案、分析商机、跨 App 协作……销售工作足够复杂，也足够真实。大量任务重复、繁琐，却不可或缺；而理解需求、建立信任、做出判断，始终需要人。</p></div></div><div aria-label="销售领域市场机会" class="market-view" id="sales-market">
+<div class="market-kicker">WHY SALES · A MASSIVE OPPORTUNITY</div>
+<p class="market-intro">更重要的是，销售背后是一个巨大的市场。Anthropic 2026 年的研究显示，美国部分销售岗位的 AI 任务暴露度达到 <strong>62.8%</strong>，意味着相当比例的工作任务已经存在 AI 介入的机会。这并不等于销售人员将被等比例替代，却清晰揭示了生产力重构的潜力。</p>
+<div aria-label="OIS 市场规模测算" class="market-metrics" role="group">
+<div class="market-metric"><b>8000万</b><span>中国销售人员规模假设</span></div>
+<div class="market-metric"><b>10万亿</b><span>年度销售费用测算</span></div>
+<div class="market-metric"><b>6万亿</b><span>潜在生产力价值空间</span></div>
+</div>
+<p class="market-point">我们选择销售作为起点：足够复杂、价值可衡量、市场足够大，也足以孕育一家世界级的 Agent 公司。</p>
+<p class="market-footnote">测算说明：8000 万人 × 人均年度销售费用 12.5 万元 ≈ 10 万亿元；假设 AI 承担 60% 工作量，理论对应约 6 万亿元生产力价值。人数、销售费用与效率情景均为 OIS 假设，非官方统计、实际可节省成本或收入预测。AI 任务暴露度来源：<a href="https://www.anthropic.com/research/labor-market-impacts" rel="noopener noreferrer" target="_blank">Anthropic《Labor market impacts of AI》（2026.03）</a>，指标不等同于岗位替代率。</p>
+</div><div class="product"><div><h3 class="product-name">让每一位销售，<br/>拥有自己的 AI 团队。</h3><p class="product-desc">我们希望，每位销售都拥有自己的 Agent 团队：自动整理客户信息、识别机会与风险、生成方案、执行跟进任务，必要时跨应用完成操作。销售本人，则可以把更多时间投入到沟通、判断与促成合作。</p><p class="product-desc product-value-summary"><strong>我们的目标，不只是让销售多完成一些任务。</strong></p><p class="product-desc">我们希望让员工拥有更强的能力、更少的重复劳动，也让企业的营销与管理变得更高效、更安全。</p></div><aside aria-label="产出提升目标" class="product-outcome"><p class="goal-statement"><strong>2–10 倍</strong><span class="goal-join">，</span><span class="goal-detail">是我们希望实现的单人产出提升目标。</span></p><p class="goal-note">这是努力方向，并非当前业绩承诺。</p></aside></div><div class="content-offset product-after"><p class="body-copy">销售是起点。未来，我们希望把这套能力带向更多岗位，服务每一个人。</p></div></section><section class="section shell" id="ambition"><div class="section-header"><div class="section-index"><b>03</b>我们的野心</div><div><h2>成为全球最有影响力的<br/><span class="highlight">十家 Agent Lab 之一</span></h2><p class="lead">技术不是展品，商业不是口号。我们希望在真实场景中积累能力，让 Agent 的每一次进步都带来更好的工作结果。</p><div class="path-overview"><p>我们的长期路径是：</p><ol class="path-steps"><li class="path-step"><strong>早期</strong>用 <strong>AI CRM</strong> 的业务表现检验价值，</li><li class="path-step"><strong>初期</strong>依靠 <strong>Agent Performance</strong> 建立优势；</li><li class="path-step"><strong>中期</strong>基于真实任务轨迹与反馈，通过 <strong class="keep-together">Post-training</strong> 让 Agent 越做越专业；</li><li class="path-step"><strong>中长期</strong>建立值得信赖的品牌。</li></ol></div><p class="body-copy">我们相信，最深的护城河是 <strong>AI 时代的组织能力</strong>：持续吸引人才、创造产品，并把技术突破转化为商业成果。</p></div></div></section><section class="section shell" id="culture"><div class="section-header"><div class="section-index"><b>04</b>我们的文化</div><div><h2>技术足够深，<br/>商业足够真</h2><p class="lead">我们既理解研发，也理解产品、销售和运营；既重视技术深度，也尊重用户价值与商业结果。我们希望成为：</p><p class="culture-declaration"><strong>技术派里最懂商业的，<br/>商业派里最懂产品的，<br/>产品派里最懂组织的。</strong></p><p class="body-copy">我们不迷信复杂管理，不欣赏脱离实践的空谈。每个人都应该深入问题、独立思考、主动推动，并对结果负责。</p></div></div><div class="values"><article class="value"><strong>用户第一</strong><p>不以技术炫目为标准，而以用户是否真正受益为标准。</p></article><article class="value"><strong>实事求是</strong><p>尊重事实与规律，不粉饰问题，不回避困难。</p></article><article class="value"><strong>积极主动</strong><p>看到问题就推动解决，不等待安排，不困于边界。</p></article><article class="value"><strong>自我批判</strong><p>敢于承认不足，持续复盘，让今天超越昨天。</p></article></div><p class="principle">我们希望，这些不是墙上的标语，而是每天真实发生的工作方式。</p></section><section class="section shell" id="join"><div class="section-header"><div class="section-index"><b>05</b>我们期待你</div><div><h2>比起漂亮履历，<br/>我们更在意你是谁</h2><p class="lead">你不必来自名校或大厂，也不必拥有耀眼的头衔。相比过去获得过什么，我们更在意你未来能够创造什么。</p></div></div><div class="traits"><article class="trait"><div class="n">01 / OWNERSHIP</div><h3>积极主动，躬身入局</h3><p>愿意亲自面对问题，承担责任，把事情从讨论推进到结果。</p></article><article class="trait"><div class="n">02 / GROWTH</div><h3>热爱学习，不自设边界</h3><p>不被既有经验束缚，敢于理解陌生领域，持续更新认知。</p></article><article class="trait"><div class="n">03 / PASSION</div><h3>出于热爱，主动创造</h3><p>因为好奇而研究技术、打磨产品、探索新想法。即使没有人要求，也愿意动手做些什么。</p></article><article class="trait"><div class="n">04 / ONE TEAM</div><h3>相信协作，追求共同胜利</h3><p>能够独立思考、坦诚争论，也愿意彼此信任、求同存异，为共同目标并肩作战。</p></article></div></section><section class="section shell" id="opportunity"><div class="section-header"><div class="section-index"><b>06</b>为什么此刻加入</div><div><h2>和一群能打的人，<br/>去做一件足够大的事</h2><p class="lead">AI 正在重新定义工作方式，而 Agent 时代才刚刚开始。很多问题没有标准答案，很多能力需要亲手创造。</p><p class="body-copy">在这里，你有机会参与 AI Native 产品从技术探索到商业落地的过程，理解一项技术怎样成为产品，又怎样进入真实工作。</p></div></div><div class="why-grid"><article class="why-card"><span class="why-num">01</span><h3>挑战真正的技术难题</h3><p>探索让 Agent 从理解目标走向完成工作的能力，把技术进步转化为用户能够感受到的价值。</p></article><article class="why-card"><span class="why-num">02</span><h3>让技术走进真实世界</h3><p>从销售场景出发，把产品放进具体任务，让每一次迭代接受业务结果的检验。</p></article><article class="why-card"><span class="why-num">03</span><h3>与伙伴共同成长</h3><p>在技术、产品和商业的交汇处解决问题，建立更完整的理解，承担更大的责任，创造超出过往履历的成果。</p></article></div><div class="content-offset after-cards"><p class="body-copy">我们愿意给主动、有能力、能拿结果的人更大的空间。</p><p class="body-copy">如果你愿意在不确定中追求卓越，期待与你并肩同行。欢迎联系向你分享这份介绍的同事，继续了解 OIS 与加入机会。</p></div></section></main><footer class="closing"><div class="shell"><h2>人人都是自己的 CEO。<br/>解放人类。</h2><p class="mission-copy">我们相信，真正值得做的 AI，不是让人越来越依赖机器，而是让每个人因为拥有 AI，变得更自由、更有能力、更有创造力。我们想创造这样的产品，也想建立一家能持续创造它们的公司。</p><div class="tagline">道相同，人相逢。</div><div class="foot"><span>OIS · 智物起源</span><span>BUILD THE NEXT WAY TO WORK.</span></div></div></footer></body></html>
