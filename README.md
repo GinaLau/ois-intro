@@ -9,10 +9,11 @@ OIS 是一家面向真实生产力的 Agent Lab。我们从 **销售工作场景
 
 ## 阅读完整介绍
 
-| 版本 | 内容重点 | 网页入口 |
-| --- | --- | --- |
-| **公司简介** | 公司愿景、产品方向、市场机会、团队文化与加入机会 | [阅读公司简介 →](https://ginalau.github.io/ois-intro/) |
-| **研发工程师专版** | 研发能力目标、工程议题、研究方向、技术取舍与协作方式 | [阅读研发工程师专版 →](https://ginalau.github.io/ois-intro/engineering.html) |
+- **[公司简介 →](https://ginalau.github.io/ois-intro/)**  
+  公司愿景、产品方向、市场机会、团队文化与加入机会。
+
+- **[研发工程师专版 →](https://ginalau.github.io/ois-intro/engineering.html)**  
+  研发能力目标、工程议题、研究方向、技术取舍与协作方式。
 
 ## 公司介绍
 
