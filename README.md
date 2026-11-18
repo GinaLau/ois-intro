@@ -28,6 +28,8 @@ OIS 是一家面向真实生产力的 Agent Lab。我们关注 Agent 如何理�
 
 ## 交流与加入
 
+**交流邮箱：** [gina@zhiwuqiyuan.com](mailto:gina@zhiwuqiyuan.com)
+
 如果你希望了解 OIS 的产品、团队或加入机会，欢迎联系**向你分享这份介绍的 OIS 同事**，继续沟通。
 
 如果你对 Agent Runtime、Context、Memory、GUI Agent、端侧智能或 Post-training 有实践或长期兴趣，也欢迎带上亲手做过的项目、一次技术取舍，或一个还没有答案的问题，与我们交流。
