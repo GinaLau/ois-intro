@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><style>*,::before,::after{box-sizing:border-box;border-width:0;border-style:solid}
+html{line-height:1.5}body{margin:0;line-height:inherit}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}
+blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}
+ol,ul,menu{list-style:none;margin:0;padding:0}b,strong{font-weight:bolder}
+a{color:inherit;text-decoration:inherit}svg{display:block;vertical-align:middle}</style><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#704EE8" name="theme-color"/><meta content="OIS Engineering｜研发工程师专版。Business Brain × Personal Agent。" name="description"/><title>OIS Engineering｜研发工程师专版</title><style>
+    :root { --ink:#17171e; --muted:#72727b; --paper:#f8f7f4; --line:#e6e4e0; --purple:#704ee8; --lavender:#e9e2ff; --white:#fff; }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif; color:var(--ink); background:var(--paper); -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    .shell { width:min(1120px,calc(100% - 96px)); margin:0 auto; }
+    .hero { position:relative; isolation:isolate; overflow:hidden; min-height:648px; background:#15151b; color:#f7f6f4; }
+    .hero::before { content:""; position:absolute; width:780px; height:780px; border-radius:50%; right:-230px; top:-175px; z-index:-2; background:radial-gradient(circle,rgba(108,76,231,.34) 0,rgba(108,76,231,.12) 34%,transparent 66%); }
+    .hero::after { content:""; position:absolute; inset:0; pointer-events:none; z-index:-1; background:linear-gradient(90deg,rgba(255,255,255,.021) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.019) 1px,transparent 1px); background-size:72px 72px; mask-image:linear-gradient(90deg,transparent 18%,black 100%); }
+    .topbar { height:104px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,.12); }
+    .brand { display:inline-flex; gap:14px; align-items:center; font-weight:750; letter-spacing:-.05em; font-size:28px; }
+    .brand-mark { color:#ab91ff; font-weight:850; letter-spacing:-.08em; }
+    .brand-cn { font-size:13px; letter-spacing:.14em; font-weight:600; color:#d1cfda; }
+    .eyebrow { text-transform:uppercase; font-size:11px; color:#aaa7b5; font-weight:650; letter-spacing:.2em; }
+    .topnav { display:flex; align-items:center; gap:26px; font-size:12px; color:#bbb9c5; }
+    .nav-link { transition:color .2s; }
+    .nav-link:hover { color:#fff; }
+    .hero-inner { display:grid; grid-template-columns:1.45fr .85fr; gap:80px; align-items:end; padding-top:100px; padding-bottom:116px; }
+    .hero .label { display:flex; gap:12px; align-items:center; color:#ae93ff; font-size:12px; letter-spacing:.15em; font-weight:700; }
+    .label::before { content:""; width:25px; height:1px; background:#ae93ff; }
+    h1 { margin:25px 0 26px; font-size:clamp(50px,6vw,82px); letter-spacing:-.075em; line-height:1.23; font-weight:750; }
+    h1 em { font-style:normal; color:#ae93ff; }
+    .hero-desc { max-width:625px; margin:0; font-size:18px; line-height:1.95; color:#c7c4cf; font-weight:400; }
+    .hero-side { padding-bottom:8px; }
+    .hero-side .separator { width:100%; height:1px; background:rgba(255,255,255,.24); margin:0 0 25px; }
+    .hero-side .overline { font-size:11px; color:#b0aebb; letter-spacing:.16em; margin-bottom:17px; }
+    .hero-side .big { font-size:clamp(24px,2.9vw,38px); letter-spacing:-.05em; font-weight:650; line-height:1.4; }
+    .hero-side .small { color:#9d9aa8; font-size:13px; line-height:1.9; margin-top:20px; }
+    .hero-footer { position:absolute; bottom:35px; left:0; right:0; display:flex; justify-content:space-between; color:#898693; font-size:11px; letter-spacing:.09em; }
+    .scroll { display:flex; gap:9px; align-items:center; }
+    .scroll-line { display:inline-block; width:34px; height:1px; background:#8a8796; }
+    main { padding-top:18px; }
+    .section { padding:85px 0; border-bottom:1px solid var(--line); }
+    .section-header { display:grid; grid-template-columns:260px 1fr; gap:40px; align-items:start; }
+    .section-index { display:flex; align-items:center; gap:16px; font-size:13px; font-weight:650; color:#747179; padding-top:9px; }
+    .section-index b { color:var(--purple); font-size:12px; font-weight:750; }
+    h2 { font-size:clamp(30px,3.6vw,47px); letter-spacing:-.055em; line-height:1.27; font-weight:720; margin:0 0 24px; }
+    .lead { font-size:19px; line-height:1.85; color:#383740; max-width:760px; margin:0; }
+    .body-copy { color:#55535e; line-height:2.05; font-size:15px; margin:17px 0 0; max-width:760px; }
+    .body-copy + .body-copy { margin-top:13px; }
+    .body-copy strong { color:#26232f; font-weight:650; }
+    .manifesto { margin:36px 0 0 300px; max-width:760px; border-left:2px solid #8d6cf1; padding:2px 0 2px 24px; font-size:19px; color:#352f44; font-weight:590; line-height:1.8; letter-spacing:-.015em; }
+    .manifesto small { display:block; color:#88818e; font-size:12px; font-weight:450; margin-top:8px; letter-spacing:0; }
+    .product-extra { margin-top:21px; padding-top:19px; border-top:1px solid #eae6ee; color:#47424e; font-size:14px; line-height:1.95; }
+    .value { text-align:left; padding:23px 20px 24px; min-height:148px; }
+    .value strong { display:block; font-size:17px; margin-bottom:11px; }
+    .value p { font-size:12px; font-weight:400; color:#77727b; line-height:1.8; margin:0; }
+    .trait p { max-width:430px; }
+    .why-grid { margin:40px 0 0 300px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+    .why-card { background:#fff; border:1px solid #e9e6e2; border-radius:12px; padding:24px 20px 29px; }
+    .why-card .why-num { display:block; font-size:12px; font-weight:750; letter-spacing:.08em; color:#876be3; margin-bottom:30px; }
+    .why-card h3 { font-size:18px; letter-spacing:-.03em; margin:0 0 11px; }
+    .why-card p { margin:0; color:#76717b; font-size:13px; line-height:1.9; }
+    .sub-lead { max-width:760px; margin-top:22px; font-size:15px; line-height:2; color:#645e69; }
+    .principle { font-size:13px; color:#77717b; line-height:1.8; margin:26px 0 0 300px; }
+    .highlight { color:#704ee8; }
+    .features { margin:48px 0 0 300px; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+    .feature { background:#eeece9; border-radius:12px; padding:20px 17px 22px; min-height:122px; }
+    .feature svg { width:21px; height:21px; stroke:#7453dc; fill:none; stroke-width:1.7; margin-bottom:18px; }
+    .feature strong { display:block; font-size:14px; font-weight:680; white-space:nowrap; }
+    .feature span { display:block; color:#86828c; font-size:11px; margin-top:6px; }
+    .product { background:#fff; border-radius:19px; padding:48px 48px 40px; display:grid; grid-template-columns:1.3fr .7fr; gap:70px; margin-top:40px; border:1px solid #eeeaf4; }
+    .product-label { font-size:12px; font-weight:720; letter-spacing:.1em; color:var(--purple); text-transform:uppercase; }
+    .product-name { font-size:clamp(26px,3vw,40px); letter-spacing:-.055em; font-weight:700; margin:16px 0 15px; line-height:1.38; }
+    .product-desc { color:#65616b; font-size:15px; line-height:2; margin:0; }
+    .product-outcome { display:flex; flex-direction:column; justify-content:center; padding-left:42px; border-left:1px solid #e9e5ee; }
+    .number { font-size:72px; color:var(--purple); letter-spacing:-.09em; line-height:1.08; font-weight:750; white-space:nowrap; }
+    .number small { font-size:26px; color:#9782e4; font-weight:550; padding-left:5px; }
+    .outcome-label { margin-top:15px; font-size:14px; line-height:1.8; color:#77717c; }
+    .roadmap { display:flex; align-items:flex-start; justify-content:space-between; gap:0; margin:45px 0 0 300px; }
+    .road-step { flex:1; min-width:0; position:relative; padding-right:11px; }
+    .road-step:not(:last-child)::after { content:""; position:absolute; left:18px; right:-1px; top:7px; height:1px; background:#ddd7ea; }
+    .road-dot { width:15px; height:15px; border:3px solid #ad9ae9; border-radius:50%; background:var(--paper); position:relative; z-index:1; margin-bottom:21px; }
+    .road-step:first-child .road-dot { background:var(--purple); border-color:var(--purple); }
+    .road-step .phase { font-size:11px; color:#99949f; margin-bottom:8px; }
+    .road-step strong { font-size:14px; line-height:1.55; display:block; font-weight:680; }
+    .values { margin:45px 0 0 300px; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:13px; }
+    .value { padding:22px 12px; text-align:center; border-radius:10px; background:#fff; border:1px solid #eae7e5; font-size:16px; font-weight:700; }
+    .traits { margin:42px 0 0 300px; display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+    .trait { padding:25px 0 18px; border-top:1px solid #d8d5d1; }
+    .trait .n { color:var(--purple); font-size:12px; font-weight:750; margin-bottom:18px; }
+    .trait h3 { font-size:19px; letter-spacing:-.03em; margin:0 0 10px; }
+    .trait p { color:#77727b; font-size:14px; line-height:1.85; margin:0; max-width:340px; }
+    .closing { background:#1b1922; color:#f5f3f7; padding:100px 0 55px; margin-top:0; position:relative; overflow:hidden; }
+    .closing::after { content:"OIS"; position:absolute; right:-42px; bottom:-140px; color:rgba(166,143,255,.055); font-size:450px; font-weight:900; letter-spacing:-.12em; pointer-events:none; }
+    .closing .mini { font-size:12px; letter-spacing:.16em; color:#ae93ff; font-weight:700; }
+    .closing h2 { margin:24px 0 20px; font-size:clamp(40px,5vw,68px); line-height:1.25; max-width:800px; }
+    .closing p { font-size:17px; color:#bfbac9; line-height:1.9; max-width:710px; margin-bottom:50px; }
+    .closing .tagline { font-size:22px; color:#d9cbff; font-weight:600; letter-spacing:.12em; margin-bottom:78px; }
+    .foot { position:relative; z-index:1; border-top:1px solid rgba(255,255,255,.16); padding-top:25px; display:flex; justify-content:space-between; font-size:12px; color:#9691a2; }
+    @media(max-width:850px) { .manifesto,.why-grid{margin-left:0} .shell{width:min(100% - 42px,670px)} .topbar{height:80px} .topnav{display:none} .hero{min-height:0} .hero-inner{grid-template-columns:1fr;gap:58px;padding:83px 0 116px} .hero-side{max-width:500px} .hero-footer{bottom:26px} .section{padding:63px 0} .section-header{grid-template-columns:1fr;gap:24px} .section-index{padding:0} .features,.roadmap,.values,.traits{margin-left:0} .principle{margin-left:0} .product{gap:25px;padding:32px;grid-template-columns:1fr} .product-outcome{border-left:0;border-top:1px solid #e9e5ee;padding:27px 0 0} .closing{padding-top:75px} }
+    @media(max-width:560px) { .brand{font-size:25px}.brand-cn{font-size:11px} .eyebrow{font-size:10px} h1{font-size:51px} .hero-desc{font-size:16px} .hero-inner{padding:72px 0 110px} .hero-side .big{font-size:28px} .section{padding:57px 0} h2{font-size:34px} .lead{font-size:17px}.body-copy{font-size:14px} .features{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:30px} .feature{min-height:111px} .values{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:29px}.traits{grid-template-columns:1fr;gap:0;margin-top:25px}.roadmap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 10px}.road-step:nth-child(even)::after{display:none}.product{margin-top:30px;padding:27px 24px}.number{font-size:59px}.closing h2{font-size:42px}.closing p{font-size:15px}.closing .tagline{font-size:20px}.foot{gap:12px;line-height:1.6}.hero-footer{font-size:10px}}
+    @media(min-width:561px) and (max-width:850px) { .why-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;} .why-card{padding:20px 15px}.why-card h3{font-size:16px} }
+    @media(max-width:560px) { .why-grid{grid-template-columns:1fr;gap:12px;margin-top:28px}.why-card{padding:21px 22px}.why-card .why-num{margin-bottom:14px}.manifesto{font-size:17px;margin-top:28px} .value{min-height:148px;padding:20px 15px}.value strong{font-size:16px}.value p{font-size:12px}.principle{margin-top:18px}.hero-footer span:first-child{max-width:66%;line-height:1.5} }
+
+    .market-view { margin:30px 0 0 300px; background:#f0edf9; border:1px solid #e6dff7; border-radius:16px; padding:28px 32px 24px; }
+    .market-kicker { color:#7250d5; font-size:11px; letter-spacing:.15em; font-weight:750; }
+    .market-intro { font-size:15px; color:#3f3b49; line-height:1.95; margin:13px 0 22px; max-width:760px; }
+    .market-metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; border-top:1px solid #ded6ee; border-bottom:1px solid #ded6ee; padding:21px 0; }
+    .market-metric { padding:0 19px; border-left:1px solid #ded6ee; }
+    .market-metric:first-child { padding-left:0; border-left:0; }
+    .market-metric:last-child { padding-right:0; }
+    .market-metric b { display:block; color:#422d91; font-size:clamp(25px,3vw,38px); line-height:1.18; letter-spacing:-.055em; font-weight:750; white-space:nowrap; }
+    .market-metric span { display:block; margin-top:9px; font-size:12px; color:#726b81; line-height:1.6; }
+    .market-point { font-size:15px; font-weight:640; color:#362e48; line-height:1.9; margin:18px 0 0; }
+    .market-footnote { font-size:11px; color:#81798d; line-height:1.8; margin:13px 0 0; }
+    .market-footnote a { color:#6749cc; text-decoration:underline; text-underline-offset:2px; }
+    @media(max-width:850px) { .market-view { margin-left:0; } }
+    @media(max-width:560px) { .market-view { padding:23px 21px 21px; margin-top:26px; } .market-intro { font-size:14px; } .market-metric { padding:0 10px; } .market-metric b { font-size:clamp(21px,6vw,30px); } .market-metric span { font-size:10px; } .market-point { font-size:14px; } }
+    @media(prefers-reduced-motion:reduce) { html{scroll-behavior:auto} }
+    @media print { body{background:#fff} .hero{-webkit-print-color-adjust:exact;print-color-adjust:exact;min-height:0} .hero-inner{padding-top:45px;padding-bottom:65px} .hero-footer{display:none} .section{padding:35px 0;break-inside:avoid} .closing{-webkit-print-color-adjust:exact;print-color-adjust:exact;break-inside:avoid} }
+
+
+    /* Responsive edition — desktop reading and truly single-column mobile reading */
+    html { -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+    body { min-width:0; overflow-x:clip; }
+    p, h1, h2, h3, .trait, .market-view, .product, .section-header, .section-header > * { min-width:0; overflow-wrap:break-word; }
+    a:focus-visible { outline:2px solid #a78bfa; outline-offset:4px; border-radius:3px; }
+    section[id] { scroll-margin-top:24px; }
+    .mobile-edition { display:none; }
+    .body-copy { font-size:16px; line-height:1.95; }
+    .lead { line-height:1.8; }
+    .market-metric b { font-variant-numeric:tabular-nums; }
+    .feature strong { white-space:normal; }
+
+    @media (min-width:1200px) {
+      .shell { width:min(1120px,calc(100% - 112px)); }
+      .section { padding:92px 0; }
+      .hero-inner { padding-top:105px; padding-bottom:125px; }
+    }
+
+    @media (min-width:851px) and (max-width:1050px) {
+      .shell { width:calc(100% - 72px); }
+      .section-header { grid-template-columns:210px minmax(0,1fr); gap:34px; }
+      .market-view, .features, .roadmap, .values, .traits, .principle, .why-grid { margin-left:244px; }
+      .hero-inner { grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); gap:42px; }
+      .product { gap:35px; }
+      .market-view { padding:25px; }
+      .market-metric { padding:0 12px; }
+      .market-metric b { font-size:clamp(25px,2.9vw,32px); }
+    }
+
+    @media (max-width:850px) {
+      .shell { width:min(100% - 48px,700px); }
+      .section-header { grid-template-columns:minmax(0,1fr); gap:20px; }
+      .section { padding:69px 0; }
+      .section-index { letter-spacing:.03em; }
+      .section-index::after { content:''; height:1px; width:44px; background:#e3dee7; }
+      .section-index { margin-bottom:3px; }
+      .market-view, .features, .roadmap, .values, .traits, .principle, .why-grid, .manifesto { margin-left:0; }
+      .body-copy { font-size:16px; line-height:1.95; }
+      .market-view { margin-top:32px; }
+      .product { grid-template-columns:minmax(0,1fr); }
+      .hero-inner { grid-template-columns:minmax(0,1fr); }
+      .hero-side { max-width:600px; }
+      .closing h2 { max-width:660px; }
+    }
+
+    @media (max-width:560px) {
+      .shell { width:calc(100% - 40px); max-width:470px; }
+      .hero { min-height:auto; }
+      .hero::before { width:440px; height:440px; right:-220px; top:80px; }
+      .hero::after { background-size:48px 48px; }
+      .topbar { height:70px; }
+      .brand { gap:10px; font-size:25px; }
+      .brand-cn { font-size:11px; }
+      .mobile-edition { display:block; color:#b6abce; font-weight:680; letter-spacing:.14em; font-size:10px; }
+      .hero-inner { gap:45px; padding:62px 0 103px; align-items:start; }
+      .hero .label { font-size:10px; letter-spacing:.13em; }
+      h1 { margin:24px 0 21px; font-size:clamp(39px,11.8vw,55px); line-height:1.22; letter-spacing:-.07em; }
+      .hero-desc { font-size:16px; line-height:1.9; max-width:32em; }
+      .hero-side { padding:0; }
+      .hero-side .separator { margin-bottom:19px; }
+      .hero-side .overline { margin-bottom:12px; font-size:10px; }
+      .hero-side .big { font-size:clamp(25px,7.4vw,32px); line-height:1.36; }
+      .hero-side .small { font-size:12px; margin-top:14px; line-height:1.85; }
+      .hero-footer { bottom:24px; gap:8px; font-size:9px; }
+      .scroll-line { width:20px; }
+      main { padding-top:0; }
+      .section { padding:55px 0 58px; }
+      .section-header { gap:17px; }
+      .section-index { font-size:12px; gap:12px; }
+      h2 { font-size:clamp(30px,8.7vw,37px); line-height:1.27; margin-bottom:22px; letter-spacing:-.055em; }
+      .lead { font-size:17px; line-height:1.84; }
+      .body-copy { font-size:16px; line-height:1.95; margin-top:18px; }
+      .body-copy + .body-copy { margin-top:13px; }
+      .manifesto { font-size:17px; padding-left:19px; margin-top:28px; line-height:1.77; }
+      .features { gap:10px; margin-top:30px; grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .feature { min-height:128px; padding:20px 14px; }
+      .feature svg { margin-bottom:16px; }
+      .feature strong { font-size:14px; line-height:1.45; }
+      .feature span { font-size:12px; line-height:1.6; }
+      .market-view { padding:23px 18px 21px; margin-top:28px; border-radius:14px; }
+      .market-kicker { font-size:10px; letter-spacing:.11em; }
+      .market-intro { margin:13px 0 20px; font-size:15px; line-height:1.88; }
+      .market-metrics { padding:0; border:0; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+      .market-metric, .market-metric:first-child, .market-metric:last-child { min-width:0; padding:16px 12px 14px; border:1px solid #e4dcee; border-radius:10px; background:rgba(255,255,255,.58); }
+      .market-metric b { font-size:clamp(22px,6.9vw,32px); line-height:1.25; white-space:nowrap; letter-spacing:-.05em; }
+      .market-metric span { margin-top:7px; font-size:12px; line-height:1.55; }
+      .market-metric:last-child { grid-column:1/-1; background:#e7dffc; border-color:#d9cdf5; padding:17px 16px; }
+      .market-metric:last-child b { font-size:clamp(34px,9.3vw,42px); }
+      .market-metric:last-child span { font-size:13px; }
+      .market-point { font-size:15px; line-height:1.85; margin-top:18px; }
+      .market-footnote { font-size:12px; line-height:1.8; margin-top:12px; }
+      .product { padding:26px 22px; gap:21px; margin-top:28px; border-radius:14px; }
+      .product-label { font-size:11px; }
+      .product-name { font-size:clamp(27px,8vw,34px); margin:13px 0; }
+      .product-desc { font-size:15px; line-height:1.95; }
+      .product-extra { font-size:15px; line-height:1.93; }
+      .product-outcome { padding-top:21px; }
+      .number { font-size:62px; }
+      .outcome-label { font-size:13px; margin-top:8px; }
+      .roadmap { display:grid; grid-template-columns:minmax(0,1fr); gap:0; margin-top:35px; }
+      .road-step { padding:0 0 24px 38px; min-height:74px; }
+      .road-step:last-child { padding-bottom:0; }
+      .road-step .road-dot { position:absolute; top:3px; left:0; margin:0; }
+      .road-step:not(:last-child)::after, .road-step:nth-child(even)::after { display:block; top:18px; left:7px; right:auto; width:1px; height:calc(100% - 13px); background:#d8d1ea; }
+      .road-step .phase { font-size:12px; margin-bottom:3px; }
+      .road-step strong { font-size:16px; line-height:1.5; }
+      .road-step strong br { display:none; }
+      .values { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:28px; }
+      .value { min-height:158px; padding:20px 14px; text-align:left; }
+      .value strong { font-size:16px; margin-bottom:11px; }
+      .value p { font-size:13px; line-height:1.78; }
+      .principle { font-size:13px; margin-top:18px; }
+      .traits { grid-template-columns:1fr; gap:0; margin-top:30px; }
+      .trait { padding:22px 0 24px; }
+      .trait .n { font-size:11px; margin-bottom:12px; }
+      .trait h3 { font-size:19px; }
+      .trait p { max-width:none; font-size:15px; line-height:1.85; }
+      .why-grid { grid-template-columns:1fr; margin-top:28px; gap:11px; }
+      .why-card { padding:22px 22px 23px; }
+      .why-card .why-num { margin-bottom:14px; }
+      .why-card h3 { font-size:18px; }
+      .why-card p { font-size:15px; line-height:1.86; }
+      .closing { padding:75px 0 37px; }
+      .closing::after { font-size:300px; right:-48px; bottom:-80px; }
+      .closing h2 { font-size:clamp(33px,9.3vw,43px); margin:22px 0 20px; }
+      .closing p { font-size:16px; line-height:1.91; margin-bottom:36px; }
+      .closing .tagline { font-size:20px; margin-bottom:65px; }
+      .foot { flex-wrap:wrap; font-size:11px; }
+    }
+
+    @media (max-width:360px) {
+      .shell { width:calc(100% - 32px); }
+      .hero-inner { padding-top:55px; }
+      .hero-footer { letter-spacing:0; }
+      .market-view { padding:20px 14px; }
+      .market-metrics { gap:8px; }
+      .market-metric, .market-metric:first-child { padding:13px 8px; }
+      .market-metric b { font-size:clamp(21px,6.6vw,25px); }
+      .market-metric span { font-size:11px; }
+      .value { padding:18px 12px; }
+      .product { padding:23px 19px; }
+      .hero-side .big { font-size:25px; }
+    }
+
+    @media (hover:none) and (pointer:coarse) {
+      .nav-link { min-height:44px; display:inline-flex; align-items:center; }
+      a { -webkit-tap-highlight-color:rgba(121,85,244,.12); }
+    }
+
+  
+/* 2.0 — 在 1.0 排版基础上的内容适配 */
+html { text-size-adjust:100%; -webkit-text-size-adjust:100%; }
+/* 明确正文标题层级，避免延后加载的 Tailwind 基础样式覆盖 1.0 的标题。 */
+body h1 { margin:25px 0 26px; font-size:clamp(50px,6vw,82px); letter-spacing:-.075em; line-height:1.23; font-weight:750; }
+body h3 { font-weight:650; }
+body h2 { text-wrap:balance; font-size:clamp(30px,3.6vw,47px); letter-spacing:-.055em; line-height:1.27; font-weight:720; margin:0 0 24px; }
+@media(max-width:560px) {
+ body h1 { margin:24px 0 21px; font-size:clamp(39px,11.8vw,55px); line-height:1.22; letter-spacing:-.07em; }
+ body h2 { font-size:clamp(30px,8.7vw,37px); line-height:1.27; margin-bottom:22px; letter-spacing:-.055em; }
+}
+body { overflow-wrap:break-word; }
+.hero > .shell { position:relative; }
+.skip-link { position:absolute; top:-80px; left:20px; padding:12px 16px; background:#fff; color:var(--ink); z-index:10; }
+.skip-link:focus { top:12px; }
+.hero-desc + .hero-desc { margin-top:13px; }
+.version-link { display:inline-flex; align-items:center; gap:9px; padding:9px 12px; border:1px solid rgba(255,255,255,.26); border-radius:5px; color:#e4dcf7; font-size:12px; white-space:nowrap; line-height:1.5; }
+.version-link:hover { border-color:#b69bff; color:#fff; }
+.mobile-version { display:none; }
+.hero-footer { width:100%; }
+.hero-footer a { display:inline-flex; align-items:center; gap:9px; }
+.content-offset { margin-left:300px; }
+.section-header > div:last-child { min-width:0; }
+.body-copy strong { color:#292432; }
+.section-copy + .section-copy { margin-top:16px; }
+.question-label { margin:25px 0 12px; font-size:16px; font-weight:650; color:#3c3547; }
+.product { align-items:start; }
+.product-name { margin-top:22px; font-size:clamp(25px,2.7vw,35px); }
+.product-desc + .product-desc { margin-top:17px; }
+.product-outcome { align-self:stretch; }
+.goal-statement { margin:0; color:#61596e; font-size:14px; line-height:1.9; }
+.goal-statement strong { display:block; margin-bottom:12px; font-size:clamp(44px,5vw,65px); font-weight:750; color:var(--purple); line-height:1.3; letter-spacing:-.065em; white-space:nowrap; }
+.goal-detail { display:block; }
+.goal-join { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.goal-note { font-size:12px; color:#746c7f; line-height:1.85; margin-top:17px; }
+.product-after { margin-top:25px; }
+.culture-declaration { margin-top:32px; font-size:21px; line-height:1.85; font-weight:620; color:#352f44; }
+.values { text-align:left; }
+.value { text-align:left; }
+.value p { font-size:13px; }
+.trait p { max-width:none; }
+.trait h3 { line-height:1.5; }
+.why-card h3 { line-height:1.55; }
+.why-card p { font-size:14px; }
+.after-cards { margin-top:29px; }
+.after-cards .body-copy { max-width:760px; }
+.closing::after { z-index:0; }
+.closing .shell { position:relative; z-index:1; }
+.closing .tagline { letter-spacing:.06em; }
+.closing .closing-link { display:inline-flex; align-items:center; gap:20px; font-size:13px; color:#e5daff; padding:12px 0; border-bottom:1px solid #827096; margin-bottom:44px; line-height:1.7; }
+.closing .tagline { margin-bottom:38px; }
+.closing h2 { font-weight:700; }
+.engineering .closing h2 { max-width:100%; font-size:clamp(29px,3.2vw,44px); line-height:1.5; }
+.engineering h1 { letter-spacing:-.06em; }
+.engineering .topic-list { margin-top:34px; }
+.engineering .topic { padding:26px 0 28px; border-top:1px solid #d8d5d1; }
+.engineering .topic:first-child { padding-top:25px; }
+.engineering .topic-index { font-size:11px; font-weight:700; color:var(--purple); margin-bottom:15px; letter-spacing:.1em; }
+.engineering .topic h3 { font-size:21px; line-height:1.55; letter-spacing:-.025em; margin:0 0 14px; }
+.engineering .topic p { font-size:16px; line-height:1.95; color:#55535e; }
+.engineering .topic p + p { margin-top:14px; }
+.engineering .research-grid { margin-top:34px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.engineering .research { border:1px solid #e7e2ed; border-radius:12px; background:#fff; padding:25px; }
+.engineering .research h3 { font-size:18px; margin:0 0 13px; line-height:1.5; }
+.engineering .research p { font-size:14px; color:#6c6475; line-height:1.95; }
+.engineering .choices { margin-top:28px; border-left:2px solid var(--purple); padding-left:22px; }
+.engineering .choices p { margin-top:0; }
+@media (min-width:851px) and (max-width:1050px) {
+ .content-offset { margin-left:244px; }
+ .topnav { gap:17px; }
+ .topnav .version-link { font-size:11px; padding:8px 10px; }
+ .product-outcome { padding-left:26px; }
+}
+@media(max-width:850px) {
+ .content-offset { margin-left:0; }
+ .mobile-version { display:inline-flex; }
+ .version-link { font-size:11px; }
+ .product-outcome { padding-left:0; }
+ .culture-declaration { font-size:21px; }
+ .goal-statement strong { font-size:59px; }
+}
+@media(max-width:560px) {
+ .brand-cn { letter-spacing:.08em; }
+ .company #about h2 .about-prefix { display:block; }
+ .engineering .closing h2 { font-size:clamp(26px,7.4vw,31px); line-height:1.5; }
+ .version-link { font-size:10px; padding:8px 9px; gap:6px; }
+ .hero-desc + .hero-desc { margin-top:12px; }
+ .hero-side .small { margin-top:14px; }
+ .product-name { font-size:27px; }
+ .culture-declaration { font-size:19px; line-height:1.9; margin-top:26px; }
+ .value p { font-size:13px; }
+ .after-cards { margin-top:25px; }
+ .engineering .topic { padding:23px 0 25px; }
+ .engineering .topic h3 { font-size:19px; }
+ .engineering .topic p { font-size:16px; }
+ .engineering .research-grid { grid-template-columns:1fr; gap:12px; margin-top:28px; }
+ .engineering .research { padding:23px 22px; }
+ .engineering .research p { font-size:15px; }
+ .engineering .choices { padding-left:18px; }
+ .engineering .why-card h3 { font-size:18px; }
+ .engineering .why-card p { font-size:15px; }
+ .closing .closing-link { font-size:13px; margin-bottom:34px; }
+ .closing .tagline { margin-bottom:31px; }
+}
+@media(max-width:360px) {
+ .brand { gap:7px; }
+ .brand-cn { font-size:10px; }
+ .version-link { font-size:9px; padding:8px; }
+}
+@media print {
+ .version-link,.closing-link,.skip-link { display:none; }
+ .hero-footer { display:none; }
+ .content-offset { margin-left:0; }
+ .section-header { grid-template-columns:1fr; gap:15px; }
+ .hero::before,.hero::after,.closing::after { display:none; }
+ .hero-inner { padding-bottom:45px; }
+ .section { break-inside:auto; }
+ .value,.trait,.why-card,.research,.topic { break-inside:avoid; }
+}
+
+/* 手机阅读优化：保留文案、色彩和 1.0 的桌面版构图。 */
+.keep-together { white-space:nowrap; }
+.copy-punctuation { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.direction-overview { margin-top:22px; }
+.direction-overview > p { margin:0 0 15px; font-size:16px; line-height:1.85; color:#55535e; }
+.direction-items { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; }
+.direction-item { display:flex; align-items:center; min-height:67px; padding:14px; border-radius:8px; background:#eeece9; font-size:14px; font-weight:650; line-height:1.65; color:#453c53; }
+.path-overview { margin-top:22px; }
+.path-overview > p { margin:0 0 20px; color:#55535e; font-size:16px; line-height:1.85; }
+.path-steps { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:17px; }
+.path-step { border-top:2px solid #d8cdef; padding-top:17px; font-size:14px; line-height:1.9; color:#645a70; }
+.path-step strong { font-weight:650; color:#352e43; }
+.engineering .topic p { max-width:740px; }
+@media(max-width:850px) {
+ .direction-items { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:560px) {
+ .hero-inner { gap:21px; padding:38px 0 69px; }
+ body h1 { margin-top:19px; margin-bottom:19px; }
+ .hero-desc { line-height:1.8; }
+ .hero-desc + .hero-desc { margin-top:11px; }
+ .hero-side { padding-top:14px; border-top:1px solid rgba(255,255,255,.2); }
+ .hero-side .separator,.hero-side .overline { display:none; }
+ .hero-side .big { font-size:20px; line-height:1.4; letter-spacing:-.025em; }
+ .hero-side .small { margin-top:7px; font-size:12px; line-height:1.75; }
+ .hero-footer { bottom:19px; }
+ .section { padding:43px 0 46px; }
+ .section-header { gap:15px; }
+ .lead { line-height:1.8; }
+ .body-copy { line-height:1.82; margin-top:16px; }
+ .body-copy + .body-copy { margin-top:13px; }
+ body h2 { margin-bottom:19px; }
+ .company #about h2 .about-prefix { display:inline; }
+ .company #about h2 .about-intro { display:block; font-size:clamp(20px,5.6vw,24px); line-height:1.55; font-weight:600; letter-spacing:-.025em; }
+ .company #about h2 .about-break { display:none; }
+ .company #about h2 .highlight { display:block; margin-top:5px; }
+ .direction-overview { margin-top:19px; }
+ .direction-overview > p { font-size:16px; line-height:1.82; margin-bottom:12px; }
+ .direction-items { gap:8px; }
+ .direction-item { min-height:56px; padding:12px; font-size:14px; line-height:1.6; }
+ .path-overview { margin-top:19px; }
+ .path-overview > p { margin-bottom:17px; font-size:16px; }
+ .path-steps { display:block; padding-left:7px; }
+ .path-step { position:relative; border-top:0; border-left:1px solid #d8cdef; padding:0 0 18px 19px; font-size:15px; line-height:1.8; }
+ .path-step:before { content:''; position:absolute; width:7px; height:7px; border-radius:50%; background:var(--purple); left:-4px; top:9px; }
+ .path-step:last-child { border-left-color:transparent; padding-bottom:0; }
+ .product { padding:23px 21px; gap:19px; margin-top:24px; }
+ .product-desc,.product-extra { line-height:1.82; }
+ .product-name { margin-top:19px; font-size:26px; }
+ .product-outcome { padding-top:19px; }
+ .goal-note { font-size:13px; line-height:1.75; margin-top:13px; }
+ .product-after { margin-top:19px; }
+ .culture-declaration { margin-top:23px; line-height:1.8; }
+ .values { display:block; margin-top:23px; }
+ .value { display:grid; grid-template-columns:70px minmax(0,1fr); gap:15px; min-height:0; padding:16px 0; border:0; border-top:1px solid #ded9e3; border-radius:0; background:transparent; }
+ .value strong { font-size:15px; line-height:1.8; margin:0; }
+ .value p { font-size:14px; line-height:1.8; color:#655f6c; }
+ .principle { line-height:1.8; margin-top:17px; }
+ .traits { margin-top:24px; }
+ .trait { padding:18px 0 20px; }
+ .trait .n { margin-bottom:9px; }
+ .trait h3 { font-size:18px; margin-bottom:9px; }
+ .trait p { line-height:1.8; }
+ .why-grid { margin-top:24px; gap:0; }
+ .why-card { display:grid; grid-template-columns:25px minmax(0,1fr); column-gap:13px; padding:18px 0 20px; border:0; border-top:1px solid #ded9e3; border-radius:0; background:transparent; }
+ .why-card .why-num { grid-row:1 / span 2; margin:0; line-height:1.8; font-size:11px; }
+ .why-card h3 { margin:0 0 9px; font-size:18px; line-height:1.55; }
+ .why-card p { font-size:15px; line-height:1.8; }
+ .after-cards { margin-top:19px; }
+ .engineering .topic-list { margin-top:23px; }
+ .engineering .topic,.engineering .topic:first-child { padding:20px 0 22px; }
+ .engineering .topic-index { margin-bottom:10px; }
+ .engineering .topic h3 { margin-bottom:10px; font-size:18px; }
+ .engineering .topic p { font-size:16px; line-height:1.82; }
+ .engineering .topic p + p { margin-top:12px; }
+ .engineering .research-grid { display:block; margin-top:22px; }
+ .engineering .research { display:grid; grid-template-columns:110px minmax(0,1fr); gap:16px; padding:18px 0; background:transparent; border:0; border-top:1px solid #ded9e3; border-radius:0; }
+ .engineering .research h3 { font-size:16px; line-height:1.6; margin:0; white-space:nowrap; }
+ .engineering .research p { font-size:15px; line-height:1.8; color:#655f6c; }
+ .engineering .choices { margin-top:20px; padding-left:16px; }
+ .closing { padding-top:51px; padding-bottom:30px; }
+ .engineering .closing h2 { font-size:clamp(24px,6.8vw,28px); line-height:1.55; text-wrap:balance; letter-spacing:-.035em; }
+ .closing .tagline { margin-bottom:24px; }
+ .closing .closing-link { margin-bottom:25px; }
+ .foot { padding-top:20px; }
+}
+@media print {
+ .copy-punctuation { position:static; width:auto; height:auto; clip-path:none; }
+ .path-steps { break-inside:avoid; }
+}
+
+/* 正文重点沿用 1.0 的深色粗体，保持其余字体及 A 版布局。 */
+body p strong { font-weight:650; color:#292432; }
+.hero p strong { color:#eee9fb; }
+.culture-declaration strong { font-weight:700; }
+/* B 版：能力概览、工程议题、方向卡片、协作原则各自有清楚层级。 */
+.engineering .work-context { margin-top:26px; display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.engineering .work-context .body-copy { margin:0; font-size:15px; line-height:1.95; }
+.engineering .work-context .body-copy:last-child { border-left:2px solid #d8cdef; padding-left:22px; }
+.engineering .capability-sentence { margin:0; }
+.engineering .capability-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; }
+.engineering .capability { background:#eeece9; border-radius:7px; padding:14px 16px; font-size:16px; font-weight:650; line-height:1.65; }
+.engineering .capability-suffix { display:block; margin-top:15px; font-size:16px; color:#55535e; line-height:1.9; }
+.engineering .engineering-topics { display:grid; gap:16px; margin-top:30px; }
+.engineering .engineering-topic { border:1px solid #e7e2ed; background:#fff; border-radius:12px; padding:27px 30px; }
+.engineering .topic-heading { display:flex; align-items:baseline; gap:15px; margin-bottom:14px; }
+.engineering .topic-number { color:var(--purple); font-size:11px; font-weight:750; line-height:1.6; letter-spacing:.08em; flex-shrink:0; }
+.engineering .engineering-topic h3 { margin:0; font-size:21px; letter-spacing:-.025em; line-height:1.55; }
+.engineering .topic-copy { margin:0; color:#55535e; font-size:16px; line-height:1.95; }
+.engineering .topic-copy + .topic-copy { margin-top:16px; border-top:1px solid #eeeaf2; padding-top:14px; color:#6c6475; font-size:14px; }
+.engineering .research { display:flex; align-items:flex-start; gap:15px; padding:25px; }
+.engineering .research-icon { width:21px; height:21px; flex:0 0 21px; margin-top:3px; stroke:var(--purple); fill:none; stroke-width:1.7; }
+.engineering .research-copy { min-width:0; }
+.engineering .research h3 { white-space:normal; }
+.engineering .working-principles { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:23px; margin-top:34px; }
+.engineering .working-principle { border-top:1px solid #d8d5d1; padding-top:22px; }
+.engineering .working-principle .topic-number { display:block; margin-bottom:16px; }
+.engineering .working-principle h3 { font-size:19px; letter-spacing:-.025em; line-height:1.6; margin:0 0 13px; text-wrap:balance; }
+.engineering .working-principle p { font-size:15px; line-height:1.95; color:#655f6c; margin:0; }
+@media(max-width:850px) {
+ .engineering .work-context { gap:23px; }
+ .engineering .working-principles { gap:22px; }
+}
+@media(max-width:560px) {
+ .engineering .work-context { display:block; margin-top:18px; }
+ .engineering .work-context .body-copy { font-size:16px; line-height:1.82; }
+ .engineering .work-context .body-copy:last-child { margin-top:17px; padding-left:16px; }
+ .engineering .capability-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+ .engineering .capability { padding:12px 14px; font-size:15px; }
+ .engineering .capability-suffix { font-size:16px; margin-top:13px; line-height:1.82; }
+ .engineering .engineering-topics { margin-top:23px; gap:13px; }
+ .engineering .engineering-topic { padding:20px; border-radius:10px; }
+ .engineering .topic-heading { gap:11px; margin-bottom:12px; }
+ .engineering .engineering-topic h3 { font-size:18px; line-height:1.55; }
+ .engineering .topic-copy { font-size:16px; line-height:1.82; }
+ .engineering .topic-copy + .topic-copy { margin-top:13px; padding-top:12px; font-size:14px; line-height:1.85; }
+ .engineering .research { display:flex; gap:13px; padding:18px 0; }
+ .engineering .research-icon { width:18px; height:18px; flex-basis:18px; margin-top:4px; }
+ .engineering .research h3 { margin:0 0 7px; font-size:17px; }
+ .engineering .research p { font-size:15px; }
+ .engineering .working-principles { display:block; margin-top:24px; }
+ .engineering .working-principle { padding:19px 0 21px; }
+ .engineering .working-principle .topic-number { margin-bottom:9px; }
+ .engineering .working-principle h3 { margin-bottom:10px; font-size:18px; text-wrap:initial; }
+ .engineering .working-principle p { font-size:16px; line-height:1.82; }
+}
+@media print {
+ .engineering-topic,.working-principle { break-inside:avoid; }
+ .engineering .copy-punctuation { position:absolute; width:1px; height:1px; clip-path:inset(50%); }
+}
+.engineering .working-principle h3 { min-height:61px; } @media(max-width:560px) { .engineering .working-principle h3 { min-height:0; } .engineering .principle-break { display:none; } }@media(min-width:561px) and (max-width:700px) { .engineering .working-principles { grid-template-columns:1fr; gap:24px; } .engineering .working-principle h3 { min-height:0; } .engineering .principle-break { display:none; } }.manifesto { font-weight:650; border-left-color:var(--purple); } .manifesto small { font-weight:450; }</style></head>
+<body class="engineering"><a class="skip-link" href="#main">跳到正文</a><header class="hero" id="top"><div class="shell">
+<nav aria-label="主导航" class="topbar"><a aria-label="OIS 智物起源" class="brand" href="#top"><span class="brand-mark">OIS</span><span class="brand-cn">智物起源</span></a><div class="topnav"><a class="nav-link" href="#goals">能力目标</a><a class="nav-link" href="#directions">研发方向</a><a class="nav-link" href="#ways">协作期待</a><a class="nav-link" href="#conversation">技术交流</a></div></nav>
+<div class="hero-inner"><div><div class="label">OIS ENGINEERING</div><h1>让 Agent<br/>把事情<em>做成。</em></h1><p class="hero-desc">大模型提供智能，Agent 将智能转化为行动，终端让 Agent 进入真实工作。</p><p class="hero-desc">OIS 是一家面向真实生产力的 Agent Lab。我们关注 Agent 如何理解目标、持续执行并评估结果，成为能够协助人完成工作的伙伴。</p></div><aside aria-label="核心定位" class="hero-side"><div class="separator"></div><div class="overline">OUR POSITIONING</div><div class="big">Business Brain<br/>× Personal Agent</div></aside></div>
+<div class="hero-footer"><span>OIS · AGENT LAB · AI + TERMINAL</span><a class="scroll" href="#context">了解研发方向<span aria-hidden="true" class="scroll-line"></span></a></div>
+</div></header><main id="main"><section class="section shell" id="context"><div class="section-header"><div class="section-index"><b>01</b>产品场景</div><div><h2>从销售工作出发</h2><p class="lead">我们的初代产品方向是 <strong>AI CRM + Personal Agent（Sales Work）</strong>，核心形态是一部 <strong class="keep-together">AI 工作手机</strong>。</p><div class="work-context"><p class="body-copy">销售工作涉及客户信息处理、持续跟进、方案整理、商机分析与跨 App 协作。这些任务彼此关联，需要从理解信息走向持续行动。</p><p class="body-copy">我们的研发目标，是让 Agent 承担其中重复而有价值的工作，让人专注于理解需求、建立信任与做出判断。</p></div></div></div><div class="manifesto">我们要做的不是“更会聊天的 AI”，<br/>而是“真正能把事情做成的 AI”。<small>BUSINESS BRAIN × PERSONAL AGENT</small></div></section><section class="section shell" id="goals"><div class="section-header"><div class="section-index"><b>02</b>能力目标</div><div><h2>从理解目标，<br/>到完成工作</h2><p class="capability-sentence"><strong class="capability-grid"><span class="capability">理解目标<span class="copy-punctuation">、</span></span><span class="capability">构建上下文<span class="copy-punctuation">、</span></span><span class="capability">检索记忆<span class="copy-punctuation">、</span></span><span class="capability">调用工具<span class="copy-punctuation">、</span></span><span class="capability">持续执行<span class="copy-punctuation">并</span></span><span class="capability">评估结果<span class="copy-punctuation"></span></span></strong><span class="capability-suffix"><span class="copy-punctuation">，</span>是我们希望 Agent 具备的能力。</span></p><p class="body-copy">围绕这些目标，我们关注三个相互关联的工程议题。</p></div></div><div class="content-offset"><div class="engineering-topics"><article class="engineering-topic"><div class="topic-heading"><span class="topic-number">01</span><h3>目标、上下文与记忆</h3></div><p class="topic-copy">一项工作有自己的目标、背景和相关信息。我们希望 Agent 能够围绕当前任务构建上下文、检索相关记忆，让后续行动建立在对工作情境的理解之上。</p><p class="topic-copy">Context 与 Memory 的价值，要回到它们是否帮助 Agent 更好地完成工作。</p></article><article class="engineering-topic"><div class="topic-heading"><span class="topic-number">02</span><h3>工具调用与持续执行</h3></div><p class="topic-copy">从整理信息到执行跟进，从单个工具到必要时的跨应用操作，我们希望 Agent 能够持续采取行动，把任务向前推进。</p><p class="topic-copy">Agent Runtime、GUI Agent，以及连接软件与终端的能力，都与这一目标相关。</p></article><article class="engineering-topic"><div class="topic-heading"><span class="topic-number">03</span><h3>结果评估与持续改进</h3></div><p class="topic-copy">把事情做成，需要回到结果中接受检验。</p><p class="topic-copy">长期来看，我们希望积累真实任务轨迹与反馈，通过 Post-training 改善 Agent 的表现，让它在具体工作中越做越专业。</p></article></div></div></section><section class="section shell" id="directions"><div class="section-header"><div class="section-index"><b>03</b>研发方向与取舍</div><div><h2>把资源投向关键能力</h2><p class="lead">我们的研究方向包括：</p></div></div><div class="content-offset"><div class="research-grid"><article class="research"><svg aria-hidden="true" class="research-icon" focusable="false" viewbox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M12 4v16M4 12h16"></path></svg><div class="research-copy"><h3>领域 Agent</h3><p class="">面向具体业务任务，以销售场景作为产品起点。</p></div></article><article class="research"><svg aria-hidden="true" class="research-icon" focusable="false" viewbox="0 0 24 24"><rect height="16" rx="3" width="16" x="4" y="4"></rect><path d="M9 4v16M4 9h16"></path></svg><div class="research-copy"><h3>Agent OS</h3><p class="">研究支撑 Agent 的 OS 能力，连接软件与终端。</p></div></article><article class="research"><svg aria-hidden="true" class="research-icon" focusable="false" viewbox="0 0 24 24"><rect height="20" rx="2" width="10" x="7" y="2"></rect><path d="M10 18h4"></path></svg><div class="research-copy"><h3>端侧模型</h3><p class="">探索更快、更近、更私密的端侧智能。</p></div></article><article class="research"><svg aria-hidden="true" class="research-icon" focusable="false" viewbox="0 0 24 24"><path d="M4 17l5-5 4 3 7-9"></path><path d="M15 6h5v5"></path></svg><div class="research-copy"><h3>Post-training</h3><p class="">探索从真实任务轨迹与反馈中持续提升 Agent 表现。</p></div></article></div><div class="choices"><p class="body-copy">现阶段，我们不从零训练基础大模型，也不自主制造硬件。<strong>我们把资源集中于 Agent、软件与终端的结合，以及它们所能创造的生产力。</strong></p></div></div></section><section class="section shell" id="ways"><div class="section-header"><div class="section-index"><b>04</b>协作期待</div><div><h2>技术足够深，<br/>商业足够真</h2><p class="lead">我们希望与这样的工程师一起工作：</p></div></div><div class="content-offset"><div class="working-principles"><article class="working-principle"><span class="topic-number">01</span><h3><span class="keep-together">深入技术，</span><br class="principle-break"/><span class="keep-together">也理解产品和业务</span></h3><p class="">愿意钻进问题，也愿意理解产品服务谁、解决什么工作，以及怎样判断结果有价值。让技术选择与用户的实际需要联系起来。</p></article><article class="working-principle"><span class="topic-number">02</span><h3><span class="keep-together">尊重事实，</span><br class="principle-break"/><span class="keep-together">愿意修正判断</span></h3><p class="">不粉饰问题，不回避困难。能够承认暂时没有答案，也愿意通过实践、学习与复盘更新自己的认知。</p></article><article class="working-principle"><span class="topic-number">03</span><h3><span class="keep-together">独立思考，</span><br class="principle-break"/><span class="keep-together">主动推进，</span><span class="keep-together">相信协作</span></h3><p class="">亲自面对问题，把讨论推进到实践，并对结果负责。能够坦诚争论，也愿意彼此信任、求同存异，为共同目标并肩作战。</p></article></div></div></section><section class="section shell" id="conversation"><div class="section-header"><div class="section-index"><b>05</b>我们希望和怎样的工程师交流</div><div><h2>带上你亲手做过的事，<br/>聊聊你的判断</h2><p class="lead">如果你对 Agent Runtime、Context、Memory、GUI Agent、端侧智能或 Post-training 有实践或长期兴趣，欢迎与我们交流。</p><p class="body-copy">我们希望从具体经历开始，了解你怎样面对工程问题。</p></div></div><div class="why-grid"><article class="why-card"><span class="why-num">01</span><h3>一个亲手做过的项目</h3><p>你想解决什么问题，实际承担了什么工作，怎样把想法推进到结果。</p></article><article class="why-card"><span class="why-num">02</span><h3>一次技术取舍</h3><p>你面对过哪些约束，为什么选择一种方案，又怎样判断它是否有效。</p></article><article class="why-card"><span class="why-num">03</span><h3>一次复盘，或一个还没有答案的问题</h3><p>哪些尝试没有达到预期，什么事实改变了你的判断，还有什么值得继续探索。</p></article></div><div class="content-offset after-cards"><p class="body-copy">相比技术名词和头衔，我们更希望理解你的实践、思考与创造。</p><p class="body-copy">欢迎联系向你分享这份介绍的同事，继续交流技术方向，并了解具体研发机会与职责。</p></div></section></main><footer class="closing"><div class="shell"><h2>我们要做的不是“更会聊天的 AI”，<br/>而是“真正能把事情<span class="keep-together">做成的 AI”。</span></h2><div class="tagline">道相同，人相逢。</div><div class="foot"><span>OIS · 智物起源</span><span>BUILD THE NEXT WAY TO WORK.</span></div></div></footer></body></html>
